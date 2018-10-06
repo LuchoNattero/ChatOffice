@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Titulo"
+            android:id="@+id/tv_titulo_trabajo"
+            android:textSize="18dp"
+            android:textColor="#000000"
+
+            />
+
+        <TextView
+            android:text="Prioridad"
+            android:id="@+id/tv_prioridad_trabajo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:textSize="18dp"
+
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_titulo_trabajo"
+            android:id="@+id/tv_resumen_tarea"
+            android:text="Breve resumen de la actividad en la cual se va a realizar"
+            android:layout_marginBottom="10dp"
+            />
+
+    </RelativeLayout>
+</FrameLayout>

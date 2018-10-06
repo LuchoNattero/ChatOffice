@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Nueva_Tarea">
+
+    <EditText
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_nueva_tarea"
+        />
+
+    <EditText
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_nueva_tarea"
+        android:id="@+id/et_nueva_descripcion"
+        />
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ingrese su prioridad:"
+        android:textSize="18dp"
+        android:layout_below="@+id/et_nueva_descripcion"
+        android:id="@+id/tv_nuevo_prioridad"
+        android:textColor="#000000"
+        />
+
+    <Spinner
+        android:layout_alignTop="@+id/tv_nuevo_prioridad"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_nueva_descripcion"
+        android:layout_marginStart="165dp"
+        android:id="@+id/sp_nuevo_prioridad"
+        />
+    <EditText
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_nuevo_prioridad"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="50dp"
+        android:layout_alignStart="@+id/tv_nuevo_prioridad"
+        android:id="@+id/et_nuevo_items"
+        />
+
+    <Button
+        android:layout_alignTop="@+id/et_nuevo_items"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/tv_nuevo_prioridad"
+        android:text="+"
+        android:textSize="18dp"
+        android:id="@+id/bt_nuevo_item"
+        />
+    <ListView
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bt_nuevo_item"
+        android:id="@+id/lv_nuevo_items"
+        android:layout_marginBottom="80dp"
+        />
+
+    <Button
+        android:id="@+id/bt_nuevo_aceptar"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:text="aceptar"
+        android:layout_alignTop="@+id/bt_nuevo_cancelar"
+        android:layout_alignEnd="@+id/bt_nuevo_cancelar"
+        android:layout_marginEnd="120dp"
+        />
+
+    <Button
+
+        android:id="@+id/bt_nuevo_cancelar"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:text="cancelar"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="10dp"
+        />
+
+
+</RelativeLayout>

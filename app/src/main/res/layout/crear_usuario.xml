@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:layout_marginTop="20dp"
+        android:id="@+id/et_nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ingrese su Nombre Completo"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        />
+    <EditText
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/et_nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ingrese su Apellido Completo"
+        android:id="@+id/et_apellido"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        />
+
+    <Switch
+        android:layout_marginTop="20dp"
+        android:id="@+id/sh_pregunta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_apellido"
+        android:text="¿Posee la ''ID'' de la empresa a la que pertenece?"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sh_pregunta"
+        android:id="@+id/et_id"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:text="Ingrese el ''ID''"
+        android:enabled="true"
+        android:layout_marginTop="20dp"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="generar ''id''"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/et_id"
+        android:id="@+id/bt_id"
+
+        />
+
+    <Button
+        android:id="@+id/bt_aceptar_usu"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:text="aceptar"
+        android:layout_alignTop="@+id/bt_cancelar"
+        android:layout_alignEnd="@+id/bt_cancelar"
+        android:layout_marginEnd="120dp"
+        />
+
+    <Button
+
+        android:id="@+id/bt_cancelar"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:text="cancelar"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="10dp"
+        />
+
+
+
+</RelativeLayout>
