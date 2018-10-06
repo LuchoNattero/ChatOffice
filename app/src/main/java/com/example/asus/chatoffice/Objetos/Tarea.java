@@ -56,6 +56,14 @@ public class Tarea implements Serializable {
         String inciso;
         boolean check;
 
+        public String getInciso() {
+            return inciso;
+        }
+
+        public boolean isCheck() {
+            return check;
+        }
+
         public Inciso(String i, boolean c){
             this.inciso = i;
             this.check = c;

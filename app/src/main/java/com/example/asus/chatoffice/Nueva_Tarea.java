@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.asus.chatoffice.Adaptadores.adaptador_incisos;
 import com.example.asus.chatoffice.Objetos.Tarea;
 import com.example.asus.chatoffice.Reference.Reference;
 
@@ -22,6 +23,7 @@ public class Nueva_Tarea extends AppCompatActivity{
     List<Tarea.Inciso> incisos = new ArrayList<>();
     ListView lv_items ;
     Tarea tarea;
+    adaptador_incisos adaptador;
     private Intent intent;
 
     public Nueva_Tarea() {
@@ -38,7 +40,7 @@ public class Nueva_Tarea extends AppCompatActivity{
         titulo = findViewById(R.id.et_nueva_tarea);
         descripcion = findViewById(R.id.et_nueva_descripcion);
         item = findViewById(R.id.et_nuevo_items);
-        lv_items = findViewById(R.id.lv_items_tareas);
+        lv_items = findViewById(R.id.lv_nuevo_items);
         aceptar = findViewById(R.id.bt_nuevo_aceptar);
         addItem = findViewById(R.id.bt_nuevo_item);
         addItem.setOnClickListener(new View.OnClickListener() {
@@ -53,8 +55,11 @@ public class Nueva_Tarea extends AppCompatActivity{
                    Tarea.Inciso inciso = new Tarea.Inciso(item.getText().toString(), false);
                    incisos.add(inciso);
                    item.setText("");
+                   adaptador = new adaptador_incisos(getApplication().getApplicationContext(),incisos);
+                   lv_items.setAdapter(adaptador);
+//                   registerForContextMenu(lv_items);
+//                   lv_items.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 
-                   
                }
             }
         });
