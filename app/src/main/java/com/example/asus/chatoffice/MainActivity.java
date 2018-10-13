@@ -1,7 +1,6 @@
 package com.example.asus.chatoffice;
 
 
-import android.content.Intent;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId()){
 
                     case R.id.navigation_chat:
-//                        Toast.makeText(MainActivity.this,"chat",Toast.LENGTH_LONG).show();
-                        chat cht = new chat();
+//                        Toast.makeText(MainActivity.this,"Listado_Chat",Toast.LENGTH_LONG).show();
+                        Listado_Chat cht = new Listado_Chat();
                         getSupportFragmentManager().beginTransaction().replace(R.id.fm_principal,cht).commit();
                         return true;
                     case R.id.navigation_trabajo:
@@ -55,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        chat lm = new chat();
+        Listado_Chat lm = new Listado_Chat();
         getSupportFragmentManager().beginTransaction().replace(R.id.fm_principal,lm).commit();
 
     }

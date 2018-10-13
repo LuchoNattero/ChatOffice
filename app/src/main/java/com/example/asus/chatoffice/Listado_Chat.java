@@ -7,16 +7,18 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.asus.chatoffice.Adaptadores.adaptador_chat;
 import com.example.asus.chatoffice.NuevoChat;
 import com.example.asus.chatoffice.Objetos.Chat_usuario;
+import com.example.asus.chatoffice.Reference.Reference;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class chat extends Fragment{
+public class Listado_Chat extends Fragment{
 
     adaptador_chat adapter;
     View miInflater;
@@ -24,8 +26,7 @@ public class chat extends Fragment{
     List<Chat_usuario> lista_chat;
     FloatingActionButton fl_add_chat;
 
-    public chat(){
-
+    public Listado_Chat() {
     }
 
     @Override
@@ -38,14 +39,17 @@ public class chat extends Fragment{
         lista_chat = new ArrayList<>();
 
         final Chat_usuario chat1 = new Chat_usuario("20:00","Oficina","Este es un msj de prueba");
+        chat1.agregarAlHistorial("Este es un msj de prueba");
+        chat1.agregarAlHistorial("Este es un msj de prueba");
         Chat_usuario chat2 = new Chat_usuario("07:00","RRHH","Este es un msj de prueba");
+        chat2.agregarAlHistorial("Este es un msj de prueba");
 
         fl_add_chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Intent intent = new Intent(getContext(), NuevoChat.class);
-//                intent.putExtra("chat",chat1);
+//                intent.putExtra("Listado_Chat",chat1);
                 startActivityForResult(intent, 1);
             }
         });
@@ -60,6 +64,21 @@ public class chat extends Fragment{
         registerForContextMenu(listViewChat);
         listViewChat.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         listViewChat.setClickable(true);
+
+
+        listViewChat.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Chat_usuario item = (Chat_usuario) parent.getItemAtPosition(position);
+
+//                Toast.makeText(view.getContext(),item.getRefImagen(),Toast.LENGTH_SHORT).show();
+//
+                Intent intent = new Intent(getContext(), Chat_Particular.class);
+                intent.putExtra(Reference.CHAT, item);
+                startActivityForResult(intent,0);
+            }
+        });
 
         return miInflater;
     }

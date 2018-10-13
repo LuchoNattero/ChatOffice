@@ -5,11 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.asus.chatoffice.Objetos.Chat_usuario;
-import com.example.asus.chatoffice.Objetos.Tarea;
 import com.example.asus.chatoffice.R;
 
 import java.util.List;
@@ -55,7 +53,7 @@ public class adaptador_chat extends BaseAdapter {
         hora = view.findViewById(R.id.tv_chat_hora_min);
         msj = view.findViewById(R.id.tv_chat_ultimo_msj);
 
-        titulo.setText(chat.getNombre_chat());
+        titulo.setText(chat.getUltimo_msj());
         hora.setText(chat.getHora());
         msj.setText(chat.getMsj());
 

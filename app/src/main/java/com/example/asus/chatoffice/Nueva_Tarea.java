@@ -56,7 +56,7 @@ public class Nueva_Tarea extends AppCompatActivity{
                    incisos.add(inciso);
                    item.setText("");
                    adaptador = new adaptador_incisos(getApplication().getApplicationContext(),incisos);
-                   lv_items.setAdapter(adaptador);
+//                   lv_items.setAdapter(adaptador);    // se rompe buscar solucion
 //                   registerForContextMenu(lv_items);
 //                   lv_items.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 

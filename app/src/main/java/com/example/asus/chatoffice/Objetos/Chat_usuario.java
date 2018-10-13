@@ -1,20 +1,37 @@
 package com.example.asus.chatoffice.Objetos;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Chat_usuario implements Serializable {
 
-    String hora, nombre_chat, msj;
+
+//    String administrador;
+    String hora, ultimo_msj, msj;
+    List<String> historial = new ArrayList<>();
 
     public Chat_usuario() {
     }
 
     public Chat_usuario(String hora, String nombre_chat, String msj) {
         this.hora = hora;
-        this.nombre_chat = nombre_chat;
+        this.ultimo_msj = nombre_chat;
         this.msj = msj;
     }
+    public void agregarAlHistorial(String m){
 
+        this.historial.add(m);
+
+    }
+
+    public List<String> getHistorial() {
+        return historial;
+    }
+
+    public void setHistorial(List<String> historial) {
+        this.historial = historial;
+    }
     public String getHora() {
         return hora;
     }
@@ -23,12 +40,12 @@ public class Chat_usuario implements Serializable {
         this.hora = hora;
     }
 
-    public String getNombre_chat() {
-        return nombre_chat;
+    public String getUltimo_msj() {
+        return ultimo_msj;
     }
 
-    public void setNombre_chat(String nombre_chat) {
-        this.nombre_chat = nombre_chat;
+    public void setUltimo_msj(String ultimo_msj) {
+        this.ultimo_msj = ultimo_msj;
     }
 
     public String getMsj() {
