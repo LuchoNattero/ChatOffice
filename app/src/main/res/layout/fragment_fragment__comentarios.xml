@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragmentos.Fragment_Comentarios">
+
+
+    <ListView
+        android:id="@+id/lv_comentarios_fragment_comentarios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/et_comentario_fragment_comentarios"
+        android:layout_marginBottom="60dp"
+         />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@drawable/sombreado"
+        android:layout_alignTop="@+id/et_comentario_fragment_comentarios"
+        android:layout_marginTop="-15dp"
+        android:id="@+id/vw_sombreado_comentario"
+        />
+    <EditText
+        android:id="@+id/et_comentario_fragment_comentarios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"
+        android:hint="Añadir Comentarios"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="5dp"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fl_enviar_comentario_fragment_comentarios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        app:fabSize="mini"
+        android:layout_alignTop="@+id/et_comentario_fragment_comentarios"
+        android:layout_marginRight="10dp"
+        android:clickable="true"
+        android:src="@drawable/ic_floating_chat"
+        app:backgroundTint="@color/colorPurpleLight_2" />
+
+
+</RelativeLayout>

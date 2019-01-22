@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "339890463061",
+    "firebase_url": "https://chatoffice-cbef3.firebaseio.com",
+    "project_id": "chatoffice-cbef3",
+    "storage_bucket": "chatoffice-cbef3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:339890463061:android:2b7f85eb3d780cf0",
+        "android_client_info": {
+          "package_name": "com.example.asus.chatoffice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "339890463061-aphrkne14g85h6f457b2slpqa8v2kgnq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.asus.chatoffice",
+            "certificate_hash": "4d1a9ac92d965f84aab693d1e9c2bb0be9b4b89b"
+          }
+        },
+        {
+          "client_id": "339890463061-7258oep5hsa6ef4sie40f8q3ovd5631g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAD38pVq-6x_w7V4w-vKcbUrpRpJUEBtJo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "339890463061-7258oep5hsa6ef4sie40f8q3ovd5631g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

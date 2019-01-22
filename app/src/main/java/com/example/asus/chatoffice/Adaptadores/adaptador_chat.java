@@ -7,18 +7,19 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.example.asus.chatoffice.Objetos.Chat_usuario;
+import com.example.asus.chatoffice.Objetos.Proyecto;
 import com.example.asus.chatoffice.R;
 
 import java.util.List;
+import java.util.Map;
 
 
 public class adaptador_chat extends BaseAdapter {
 
     Context context;
-    List<Chat_usuario>lista_chats;
+    List<Proyecto> lista_chats;
 
-    public adaptador_chat(Context c, List<Chat_usuario> lista){
+    public adaptador_chat(Context c, List<Proyecto> lista){
 
         context = c;
         lista_chats = lista;
@@ -29,7 +30,7 @@ public class adaptador_chat extends BaseAdapter {
     }
 
     @Override
-    public Chat_usuario getItem(int i) {
+    public Proyecto getItem(int i) {
         return lista_chats.get(i);
     }
 
@@ -46,17 +47,16 @@ public class adaptador_chat extends BaseAdapter {
             view = inflater.inflate(R.layout.fragment_chat_min, viewGroup, false);
         }
 
-        Chat_usuario chat =  getItem(i);
+        Proyecto chat =  getItem(i);
 
         TextView titulo, msj, hora;
         titulo = view.findViewById(R.id.tv_titulo_chat_min);
         hora = view.findViewById(R.id.tv_chat_hora_min);
         msj = view.findViewById(R.id.tv_chat_ultimo_msj);
 
-        titulo.setText(chat.getUltimo_msj());
-        hora.setText(chat.getHora());
-        msj.setText(chat.getMsj());
-
+        titulo.setText(chat.getTitulo());
+//        hora.setText(chat.getHistorial().get(chat.getHistorial().size()).getHora());
+//        msj.setText(chat.getHistorial().get(chat.getHistorial().size()).getMensaje());
         return view;
     }
 }

@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.asus.chatoffice">
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,16 +15,38 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Nueva_Tarea"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Proyecto_Particular"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainReuniones"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".NuevaReunion"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".MainRaelizarTarea"
+            android:label="@string/title_activity_main_raelizar_tarea"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ActivityLogeoUsuario"
+            android:screenOrientation="portrait">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Nueva_Tarea" />
-        <activity android:name=".NuevoChat" />
-        <activity android:name=".Chat_Particular"></activity>
+        <activity android:name=".Nuevo_Proyecto"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainRegistraUsuario"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Pantilla_Comunicado"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MainConfiguracion"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

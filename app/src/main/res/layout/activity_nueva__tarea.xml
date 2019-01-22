@@ -3,94 +3,142 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Nueva_Tarea">
+    android:layout_height="wrap_content"
+    android:scrollbarSize="@dimen/activity_vertical_margin"
+    tools:context=".Nueva_Tarea"
+    android:orientation="vertical"
+    android:overScrollMode="ifContentScrolls"
+    android:scrollbarStyle="insideOverlay"
+    android:scrollbars="vertical">
+
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/tb_nueva_tarea"
+        android:background="@color/colorPurpleLight"
+        android:title="Nueva Tarea"
+        android:titleTextColor="@color/colorBlanco"/>
 
     <EditText
-        android:layout_marginTop="10dp"
+        android:id="@+id/et_tituo_nueva_tarea"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/et_nueva_tarea"
-        />
+        android:layout_marginTop="10dp"
+        android:hint="Ingrese el Titulo"
+        android:layout_below="@+id/tb_nueva_tarea"/>
 
     <EditText
-        android:layout_marginTop="10dp"
+        android:id="@+id/et_descripcion_nueva_tarea"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_nueva_tarea"
-        android:id="@+id/et_nueva_descripcion"
-        />
+        android:layout_below="@+id/et_tituo_nueva_tarea"
+        android:layout_marginTop="5dp"
+        android:hint="Ingrese una breve Descripción" />
+
     <TextView
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="5dp"
+        android:id="@+id/tv_prioridad_nueva_tarea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ingrese su prioridad:"
-        android:textSize="18dp"
-        android:layout_below="@+id/et_nueva_descripcion"
-        android:id="@+id/tv_nuevo_prioridad"
+        android:layout_below="@+id/et_descripcion_nueva_tarea"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:text="Prioridad:"
         android:textColor="#000000"
-        />
+        android:textSize="18dp" />
 
     <Spinner
-        android:layout_alignTop="@+id/tv_nuevo_prioridad"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/et_nueva_descripcion"
-        android:layout_marginStart="165dp"
-        android:id="@+id/sp_nuevo_prioridad"
-        />
-    <EditText
-        android:layout_marginTop="10dp"
+        android:id="@+id/sp_prioridad_nueva_tarea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_nuevo_prioridad"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="50dp"
-        android:layout_alignStart="@+id/tv_nuevo_prioridad"
-        android:id="@+id/et_nuevo_items"
-        />
+        android:layout_alignTop="@+id/tv_prioridad_nueva_tarea"
+        android:layout_marginStart="100dp" />
 
-    <Button
-        android:layout_alignTop="@+id/et_nuevo_items"
-        android:layout_width="40dp"
+    <TextView
+        android:id="@+id/tv_seleccion_proyecto_nueva_tarea"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/tv_nuevo_prioridad"
-        android:text="+"
+        android:layout_below="@+id/tv_prioridad_nueva_tarea"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:text="Proyecto: "
+        android:textColor="#000000"
+        android:textSize="18dp" />
+
+    <Spinner
+        android:id="@+id/sp_asignar_proyecto_nueva_tarea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/tv_seleccion_proyecto_nueva_tarea"
+        android:layout_marginLeft="100dp" />
+
+    <TextView
+        android:id="@+id/tv_seleccion_usuario_nueva_tarea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_seleccion_proyecto_nueva_tarea"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:text="Usuario: "
+        android:textColor="#000000"
         android:textSize="18dp"
-        android:id="@+id/bt_nuevo_item"
+
         />
+
     <ListView
-        android:layout_marginTop="10dp"
+        android:id="@+id/lv_usuario_tarea_nueva_tarea"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/tv_seleccion_usuario_nueva_tarea"
+
+        />
+
+    <EditText
+        android:id="@+id/et_item_nueva_tarea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/bt_nuevo_item"
-        android:id="@+id/lv_nuevo_items"
-        android:layout_marginBottom="80dp"
-        />
+        android:layout_alignParentEnd="true"
+        android:layout_alignStart="@+id/tv_prioridad_nueva_tarea"
+        android:layout_below="@+id/lv_usuario_tarea_nueva_tarea"
+        android:layout_marginEnd="50dp"
+        android:layout_marginTop="10dp"
+        android:hint="Nombre del item" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fl_add_nueva_tarea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/et_item_nueva_tarea"
+        android:src="@drawable/ic_floating_chat"
+        app:backgroundTint="@color/colorPurpleLight_2"
+        app:fabSize="mini" />
+
+    <ListView
+        android:id="@+id/lv_items_nueva_tarea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_item_nueva_tarea"
+        android:layout_marginBottom="60dp"
+        android:layout_marginTop="10dp" />
 
     <Button
-        android:id="@+id/bt_nuevo_aceptar"
+        android:id="@+id/bt_aceptar_nueva_tarea"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
-        android:text="aceptar"
-        android:layout_alignTop="@+id/bt_nuevo_cancelar"
-        android:layout_alignEnd="@+id/bt_nuevo_cancelar"
+        android:layout_alignEnd="@+id/bt_cancelar_nueva_tarea"
+        android:layout_alignTop="@+id/bt_cancelar_nueva_tarea"
         android:layout_marginEnd="120dp"
-        />
+        android:text="aceptar" />
 
     <Button
 
-        android:id="@+id/bt_nuevo_cancelar"
+        android:id="@+id/bt_cancelar_nueva_tarea"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
-        android:text="cancelar"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginBottom="20dp"
         android:layout_marginRight="10dp"
-        />
+        android:text="cancelar" />
 
 
 </RelativeLayout>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainConfiguracion">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="COFIGURACION"
+        android:id="@+id/tv_titulo_configuracion"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_nombre_configuracion"
+        android:layout_below="@+id/tv_titulo_configuracion"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et_apellido_configuracion"
+        android:layout_below="@+id/et_nombre_configuracion"
+        />
+
+    <EditText
+        android:id="@+id/et_organizacion_configuracion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_apellido_configuracion"
+        android:layout_marginRight="100dp"
+        />
+
+    <Button
+        android:id="@+id/bt_cambiar_organizacion_configuracion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="5dp"
+        android:layout_below="@+id/et_apellido_configuracion"
+        android:text="CAMBIAR" />
+
+</RelativeLayout>

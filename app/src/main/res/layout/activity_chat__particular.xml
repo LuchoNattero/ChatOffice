@@ -5,34 +5,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Chat_Particular">
+    tools:context=".Proyecto_Particular"
+    >
 
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/tb_comunicado"
+        android:background="@color/colorPrimary"
+        />
     <ListView
+        android:id="@+id/lv_chat_particular"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="70dp"
-        android:id="@+id/lv_chat_particular"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="15dp"
-        android:id="@+id/et_chat_particular"
-
+        android:scrollbars="horizontal|vertical"
+        android:layout_below="@+id/tb_comunicado"
         />
 
-    <android.support.design.widget.FloatingActionButton
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignTop="@+id/et_chat_particular"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="5dp"
-        android:id="@+id/fl_enviar_msj"
-        android:clickable="true"
-        app:srcCompat="@drawable/ic_enviar_msj" />
-
-
+   <Button
+       android:id="@+id/bt_comunicado_chat_particular"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Realizar Comunicado"
+       android:layout_alignParentBottom="true"
+       android:layout_alignParentRight="true"
+       android:layout_marginRight="10dp"
+       />
 </RelativeLayout>

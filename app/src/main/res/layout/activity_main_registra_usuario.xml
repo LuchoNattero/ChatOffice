@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainRegistraUsuario">
+
+    <EditText
+        android:id="@+id/et_nombre_registrar_usuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre Completo"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="60dp"
+
+
+        />
+    <EditText
+        android:layout_below="@+id/et_nombre_registrar_usuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Apellido Completo"
+        android:id="@+id/et_apellido_registrar_usuario"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="60dp"
+
+        />
+
+    <EditText
+        android:id="@+id/et_email_registrar_usuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="60dp"
+        android:layout_below="@+id/et_apellido_registrar_usuario"
+        />
+
+    <EditText
+        android:id="@+id/et_contrasenia_registrar_usuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contraseña"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="60dp"
+        android:layout_below="@+id/et_email_registrar_usuario"
+        />
+    <EditText
+        android:id="@+id/et_contrasenia_repetir_registrar_usuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Repetir Contraseña"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="60dp"
+        android:layout_below="@+id/et_contrasenia_registrar_usuario"
+        />
+
+    <Switch
+        android:id="@+id/sh_pregunta_registrar_usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_contrasenia_repetir_registrar_usuario"
+        android:text="Usted es el Administrado"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+
+
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sh_pregunta_registrar_usuario"
+        android:id="@+id/et_id_registrar_usuario"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:hint="Ingrese el codigo de la organizacion"
+        android:layout_marginTop="20dp"
+
+        />
+    <!--
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lv_registrar_usuario"
+        android:layout_below="@+id/et_id_registrar_usuario"
+        android:layout_marginBottom="160dp"/>
+-->
+    <Button
+        android:id="@+id/bt_aceptar_registrar_usuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/bt_cancelar_registrar_usuario"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginBottom="70dp"
+        android:text="aceptar"
+        />
+
+    <Button
+
+        android:id="@+id/bt_cancelar_registrar_usuario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:text="cancelar"
+
+
+        />
+
+
+
+</RelativeLayout>

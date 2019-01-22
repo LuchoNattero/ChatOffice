@@ -13,7 +13,7 @@
     <item
         android:id="@+id/navigation_chat"
         android:icon="@drawable/ic_navegation_chat"
-        android:title="Chat"
+        android:title="Proyectos"
         android:enabled="true"
         app:showAsAction="ifRoom"/>
     <item
