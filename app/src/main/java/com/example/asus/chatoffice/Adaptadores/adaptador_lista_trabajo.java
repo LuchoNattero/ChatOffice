@@ -63,6 +63,7 @@ public class adaptador_lista_trabajo extends BaseAdapter {
         titulo.setText(tarea.getTitulo());
         prioridad.setText(tarea.getPrioridad());
         descripcion.setText(tarea.getDescripcion());
+/*
 
         if (prioridad.getText().toString().equals(Reference.PRIORIDAD_ALTA)){
 
@@ -79,6 +80,7 @@ public class adaptador_lista_trabajo extends BaseAdapter {
             relativeLayout.setBackgroundResource(R.drawable.contenedor_tarea_baja);
 
         }
+*/
         return view;
     }
 }

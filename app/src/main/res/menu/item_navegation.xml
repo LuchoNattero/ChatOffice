@@ -2,7 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
+    <item
+        android:id="@+id/navigation_chat"
+        android:icon="@drawable/ic_navegation_chat"
+        android:title="Chat"
+        android:enabled="true"
+        app:showAsAction="ifRoom"/>
     <item
         android:id="@+id/navigation_reunion"
         android:icon="@drawable/ic_navegation_reunion"
@@ -10,16 +15,11 @@
         app:showAsAction="ifRoom"
         android:enabled="true"/>
 
-    <item
-        android:id="@+id/navigation_chat"
-        android:icon="@drawable/ic_navegation_chat"
-        android:title="Proyectos"
-        android:enabled="true"
-        app:showAsAction="ifRoom"/>
+
     <item
         android:id="@+id/navigation_trabajo"
         android:icon="@drawable/ic_navegation_trabajo"
-        android:title="Tareas"
+        android:title="Mis Tareas"
         app:showAsAction="ifRoom"
         android:enabled="true"/>
 

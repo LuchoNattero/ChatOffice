@@ -22,7 +22,9 @@
         android:text="Enviar"
         android:layout_alignTop="@+id/bt_cancelar_plantilla_comunicado"
         android:layout_alignEnd="@+id/bt_cancelar_plantilla_comunicado"
-        android:layout_marginEnd="120dp"/>
+        android:layout_marginEnd="120dp"
+        android:background="@drawable/boton_circular_blanco"
+        />
     <Button
         android:id="@+id/bt_cancelar_plantilla_comunicado"
         android:layout_width="110dp"
@@ -32,6 +34,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="20dp"
         android:layout_marginRight="10dp"
+        android:background="@drawable/boton_circular_blanco"
 
         />
 

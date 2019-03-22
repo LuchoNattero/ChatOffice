@@ -2,43 +2,29 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="150dp"
     >
     <RelativeLayout
 
-        android:layout_marginHorizontal="5dp"
+        android:layout_marginHorizontal="15dp"
         android:layout_marginVertical="2dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="5dp"
-        android:id="@+id/rl_fragment_trabajo_min">
+        android:id="@+id/rl_fragment_trabajo_min"
+        android:background="@drawable/contenedor_tarea_baja"
+        >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:text="Titulo"
             android:id="@+id/tv_titulo_tarea_realizar"
             android:textSize="18dp"
             android:textColor="#000000"
+            android:layout_marginTop="20dp"
 
             />
-
-        <TextView
-            android:text="Prioridad"
-            android:id="@+id/tv_prioridad_tarea_realizar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="10dp"
-            android:textSize="18dp"
-
-            />
-        <View
-        android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:layout_below="@+id/tv_titulo_tarea_realizar"
-        android:background="@color/colorPrimary"
-        />
 
         <TextView
             android:layout_width="match_parent"
@@ -47,7 +33,30 @@
             android:id="@+id/tv_resumen_tarea"
             android:text="Breve resumen de la actividad en la cual se va a realizar"
             android:layout_marginBottom="10dp"
+            android:layout_marginHorizontal="15dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Proceso:"
+            android:id="@+id/tv_proceso_tarea_realizar"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="15dp"
+
             />
 
+        <TextView
+            android:text="Prioridad"
+            android:id="@+id/tv_prioridad_tarea_realizar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginRight="15dp"
+            />
     </RelativeLayout>
 </RelativeLayout>

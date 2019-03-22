@@ -3,9 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
 
     >
-    <solid  android:color="@android:color/background_light"></solid>
-    <size android:height="40dp"></size>
-    <corners android:radius="30dp"></corners>
+    <solid  android:color="@color/colorBlanco"></solid>
+    <corners android:radius="15dp"></corners>
+    <stroke android:width="1dp" android:color="#b3b3b3"></stroke>
 
 
 </shape>

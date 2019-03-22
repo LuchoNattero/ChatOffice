@@ -12,7 +12,8 @@
     <color name="colorPurpleDark">#11012a</color>
     <color name="colorPurpleLight">#3d354b</color>
     <color name="colorPurpleLight_2">#57417c</color>
-    <color name="colorGris">#aeaeae</color>
+    <color name="colorGris">#b3b3b3</color>
     <color name="colorPurpleSuperLight">#b7a0df</color>
     <color name="colorBlanco">#FFFFFF</color>
+    <color name="colorCeleste">#7B52BEC8</color>b3b3b3
 </resources>
