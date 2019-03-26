@@ -15,38 +15,42 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Nueva_Tarea"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Proyecto_Particular"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".MainReuniones"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".NuevaReunion"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Nueva_Tarea"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Proyecto_Particular"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainRaelizarTarea"
             android:label="@string/title_activity_main_raelizar_tarea"
-            android:theme="@style/AppTheme"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ActivityLogeoUsuario"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ActivityLogeoUsuario"
             android:screenOrientation="portrait">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Nuevo_Proyecto"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".MainRegistraUsuario"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Pantilla_Comunicado"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".MainConfiguracion"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Nuevo_Proyecto"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainRegistraUsuario"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Pantilla_Comunicado"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainConfiguracion"
+            android:screenOrientation="portrait" />
+        <activity android:name=".NuevaReunion"></activity>
     </application>
 
 </manifest>

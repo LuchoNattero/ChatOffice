@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_tarea"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginVertical="2dp"
+
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="motivo"
+            android:id="@+id/tv_motivo_reunion"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:textSize="18dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="dia"
+            android:id="@+id/tv_dia_reunion"
+            android:layout_below="@+id/tv_motivo_reunion"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="5dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hora"
+            android:id="@+id/tv_hora_reunion"
+            android:layout_below="@+id/tv_motivo_reunion"
+            android:layout_marginTop="5dp"
+            android:layout_alignLeft="@+id/tv_dia_reunion"
+            android:layout_marginLeft="30dp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="lugar"
+            android:id="@+id/tv_lugar_reunion"
+            android:layout_below="@+id/tv_hora_reunion"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="5dp"
+            />
+        <Button
+            android:layout_width="110dp"
+            android:layout_height="40dp"
+            android:text="aceptar"
+            android:id="@+id/bt_aceptar_reunion"
+            android:layout_alignParentBottom="true"
+            android:layout_alignRight="@+id/bt_cancelar_reunion"
+            android:layout_marginRight="120dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/boton_circular_blanco"
+
+            />
+        <Button
+            android:layout_width="110dp"
+            android:layout_height="40dp"
+            android:text="cancelar"
+            android:id="@+id/bt_cancelar_reunion"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/boton_circular_blanco"
+            />
+    </RelativeLayout>
+</RelativeLayout>
