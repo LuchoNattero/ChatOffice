@@ -30,30 +30,15 @@
             app:rippleColor="@android:color/background_light"
             android:id="@+id/fl_add_chat"
             />
-
-        <android.support.design.widget.FloatingActionButton
+        <TextView
+            android:id="@+id/tv_no_posee_proyecto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginBottom="60dp"
-            android:layout_marginEnd="10dp"
-            android:src="@drawable/ic_add_reunion_2"
-            app:backgroundTint="@color/colorPurpleLight_2"
-            app:rippleColor="@android:color/background_light"
-            android:id="@+id/fl_add_reunion"
-            />
-        <android.support.design.widget.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginBottom="110dp"
-            android:layout_marginEnd="10dp"
-            android:src="@drawable/ic_add_tarea"
-            app:backgroundTint="@color/colorPurpleLight_2"
-            app:rippleColor="@android:color/background_light"
-            android:id="@+id/fl_add_tarea"
+            android:text="No tiene proyectos"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="40dp"
+            android:visibility="gone"
             />
     </RelativeLayout>
 </FrameLayout>

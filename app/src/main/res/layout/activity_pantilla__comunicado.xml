@@ -6,36 +6,52 @@
     android:layout_height="match_parent"
     tools:context=".Pantilla_Comunicado">
 
+    <Button
+        android:id="@+id/bt_enviar_plantilla_comunicado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comunicar"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/boton_circular_blanco"
+        android:textColor="@color/colorPurpleLight_2"
+
+        />
+
+    <Button
+        android:id="@+id/bt_cancelar_plantilla_comunicado"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="X"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:background="@android:color/transparent"
+        android:textSize="24dp"
+        android:textColor="@color/colorPurpleLight_2"
+        />
+
+    <RelativeLayout
+        android:layout_below="@+id/bt_enviar_plantilla_comunicado"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginVertical="5dp"
+        android:background="@drawable/boton_circular_blanco">
+
     <EditText
         android:id="@+id/et_comunicado_pantilla_comunicado"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="20dp"
         android:gravity="top"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:hint="¿Que quieres comunicar?"
         android:inputType="textMultiLine"
         android:scrollHorizontally="false"
+        android:background="@null"
         />
-    <Button
-        android:id="@+id/bt_enviar_plantilla_comunicado"
-        android:layout_width="110dp"
-        android:layout_height="wrap_content"
-        android:text="Enviar"
-        android:layout_alignTop="@+id/bt_cancelar_plantilla_comunicado"
-        android:layout_alignEnd="@+id/bt_cancelar_plantilla_comunicado"
-        android:layout_marginEnd="120dp"
-        android:background="@drawable/boton_circular_blanco"
-        />
-    <Button
-        android:id="@+id/bt_cancelar_plantilla_comunicado"
-        android:layout_width="110dp"
-        android:layout_height="wrap_content"
-        android:text="cancelar"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="20dp"
-        android:layout_marginRight="10dp"
-        android:background="@drawable/boton_circular_blanco"
-
-        />
-
+    </RelativeLayout>
 </RelativeLayout>

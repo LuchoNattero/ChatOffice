@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.asus.chatoffice.Objetos.Mensaje;
 import com.example.asus.chatoffice.Reference.Reference;
@@ -30,7 +31,7 @@ public class Pantilla_Comunicado extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if (!et_comunicado.getText().toString().isEmpty()) {
+                if (et_comunicado.getText().toString().length() > 20) {
                     Mensaje msj = new Mensaje();
                     msj.setMensaje(et_comunicado.getText().toString());
 
@@ -39,6 +40,17 @@ public class Pantilla_Comunicado extends AppCompatActivity {
                     finish();
 
                 }
+                else {
+
+                    Toast.makeText(getApplicationContext(),"El comunicado es muy corto",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        bt_cancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setResult(RESULT_CANCELED);
+                finish();
             }
         });
     }

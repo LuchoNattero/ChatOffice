@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
@@ -44,6 +45,7 @@ import static android.app.Activity.RESULT_OK;
 
 public class Listado_Proyectos extends Fragment{
 
+    TextView tv_nop_proyecto;
     adaptador_chat adapter;
     View miInflater;
     ListView listViewChat;
@@ -67,6 +69,8 @@ public class Listado_Proyectos extends Fragment{
 
         listViewChat = miInflater.findViewById(R.id.lv_chats);
         fl_add_chat = miInflater.findViewById(R.id.fl_add_chat);
+        tv_nop_proyecto = miInflater.findViewById(R.id.tv_no_posee_proyecto);
+
         user = FirebaseAuth.getInstance().getCurrentUser();
 
 
@@ -133,6 +137,7 @@ public class Listado_Proyectos extends Fragment{
 
                             lista_proyectos.add(pro);
                         }
+                        poseeProyectos();
                         adapter.notifyDataSetChanged();
                         progressDialog_principal.dismiss();
                     }
@@ -146,7 +151,6 @@ public class Listado_Proyectos extends Fragment{
 
             }
         });
-
 
         fl_add_chat.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -178,6 +182,19 @@ public class Listado_Proyectos extends Fragment{
         return miInflater;
     }
 
+    void poseeProyectos(){
+
+        if (lista_proyectos.size() <= 0)
+        {
+            tv_nop_proyecto.setVisibility(View.VISIBLE);
+        }
+        else
+        {
+            tv_nop_proyecto.setVisibility(View.GONE);
+
+        }
+
+    }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
@@ -189,7 +206,6 @@ public class Listado_Proyectos extends Fragment{
 
                 asignar_proyecto(proyecto);
 
-
             }
             else if(resultCode == RESULT_CANCELED){
 
@@ -198,6 +214,7 @@ public class Listado_Proyectos extends Fragment{
             }
 
         }
+        poseeProyectos();
 
     }
     void asignar_proyecto(Proyecto proyecto){

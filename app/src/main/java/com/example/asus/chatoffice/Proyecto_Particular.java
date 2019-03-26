@@ -42,6 +42,7 @@ public class Proyecto_Particular extends AppCompatActivity {
     ArrayAdapter<String> itemsAdapter;
     Proyecto proyecto;
     ProgressDialog progressDialog_principal;
+    FloatingActionButton fl_comunicado;
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     @SuppressLint("ResourceAsColor")
@@ -52,7 +53,9 @@ public class Proyecto_Particular extends AppCompatActivity {
 
         intent = getIntent();
         toolbar = findViewById(R.id.tb_comunicado);
-        bt_comunicado = findViewById(R.id.bt_comunicado_chat_particular);
+//        bt_comunicado = findViewById(R.id.bt_comunicado_chat_particular);
+        fl_comunicado = findViewById(R.id.fl_comunicado_chat_particular);
+
         lv_historial = findViewById(R.id.lv_chat_particular);
         proyecto = (Proyecto) intent.getSerializableExtra(Reference.CHAT);
 
@@ -100,16 +103,13 @@ public class Proyecto_Particular extends AppCompatActivity {
 
 
 
-        bt_comunicado.setOnClickListener(new View.OnClickListener() {
+        fl_comunicado.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Intent intent_chat = new Intent(getApplicationContext(),Pantilla_Comunicado.class);
                 startActivityForResult(intent_chat,1);
             }
         });
-
-
     }
 
     @Override
