@@ -18,8 +18,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.asus.chatoffice.Adaptadores.AdaptadorReuniones;
 import com.example.asus.chatoffice.FireBase.Reference_Fire_Base;
 import com.example.asus.chatoffice.Objetos.Organizacion;
+import com.example.asus.chatoffice.Objetos.Reunion;
 import com.example.asus.chatoffice.Objetos.Usuario;
 import com.example.asus.chatoffice.Reference.Reference;
 import com.google.firebase.auth.FirebaseAuth;
