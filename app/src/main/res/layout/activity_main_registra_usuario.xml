@@ -9,74 +9,96 @@
     <EditText
         android:id="@+id/et_nombre_registrar_usuario"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:paddingLeft="10dp"
+
         android:hint="Nombre Completo"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="60dp"
-
+        android:background="@drawable/boton_circular_blanco"
+        android:layout_marginTop="5dp"
 
         />
     <EditText
         android:layout_below="@+id/et_nombre_registrar_usuario"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:paddingLeft="10dp"
         android:hint="Apellido Completo"
         android:id="@+id/et_apellido_registrar_usuario"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="60dp"
+        android:background="@drawable/boton_circular_blanco"
+        android:layout_marginTop="5dp"
 
         />
 
     <EditText
         android:id="@+id/et_email_registrar_usuario"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Email"
+        android:layout_height="50dp"
+        android:paddingLeft="10dp"        android:hint="Email"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="60dp"
         android:layout_below="@+id/et_apellido_registrar_usuario"
+        android:background="@drawable/boton_circular_blanco"
+        android:layout_marginTop="5dp"
+
         />
 
     <EditText
         android:id="@+id/et_contrasenia_registrar_usuario"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Contraseña"
+        android:layout_height="50dp"
+        android:paddingLeft="10dp"        android:hint="Contraseña"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="60dp"
         android:layout_below="@+id/et_email_registrar_usuario"
+        android:background="@drawable/boton_circular_blanco"
+        android:layout_marginTop="5dp"
+
         />
     <EditText
         android:id="@+id/et_contrasenia_repetir_registrar_usuario"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:paddingLeft="10dp"
         android:hint="Repetir Contraseña"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="60dp"
         android:layout_below="@+id/et_contrasenia_registrar_usuario"
+        android:background="@drawable/boton_circular_blanco"
+        android:layout_marginTop="5dp"
+
         />
 
     <Switch
         android:id="@+id/sh_pregunta_registrar_usuario"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:paddingLeft="10dp"
         android:layout_below="@+id/et_contrasenia_repetir_registrar_usuario"
         android:text="Usted es el Administrado"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
+        android:background="@drawable/boton_circular_blanco"
 
+        android:layout_marginTop="5dp"
 
         />
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:paddingLeft="10dp"
         android:layout_below="@+id/sh_pregunta_registrar_usuario"
         android:id="@+id/et_id_registrar_usuario"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:hint="Ingrese el codigo de la organizacion"
         android:layout_marginTop="20dp"
+        android:background="@drawable/boton_circular_blanco"
+
 
         />
     <!--
@@ -95,6 +117,9 @@
         android:layout_marginHorizontal="40dp"
         android:layout_marginBottom="70dp"
         android:text="aceptar"
+        android:background="@drawable/boton_circular_blanco"
+        android:textColor="@color/colorPurpleLight_2"
+
         />
 
     <Button
@@ -106,8 +131,8 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="30dp"
         android:text="cancelar"
-
-
+        android:background="@drawable/boton_circular_blanco"
+        android:textColor="@color/colorPurpleLight_2"
         />
 
 
