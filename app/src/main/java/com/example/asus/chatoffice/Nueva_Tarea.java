@@ -6,6 +6,9 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -52,6 +55,8 @@ public class Nueva_Tarea extends AppCompatActivity implements AdapterView.OnItem
     List<Tarea.Inciso> incisos = new ArrayList<>();
     Usuario usuarioTarea = new Usuario();
 
+    Toolbar tb_nueva_tarea;
+
     FirebaseDatabase database = FirebaseDatabase.getInstance();
 
     private Intent intent;
@@ -71,11 +76,14 @@ public class Nueva_Tarea extends AppCompatActivity implements AdapterView.OnItem
         descripcion = findViewById(R.id.et_descripcion_nueva_tarea);
         item = findViewById(R.id.et_item_nueva_tarea);
         lv_items = findViewById(R.id.lv_items_nueva_tarea);
-        aceptar = findViewById(R.id.bt_aceptar_nueva_tarea);
+//        aceptar = findViewById(R.id.bt_aceptar_nueva_tarea);
         fl_addItem = findViewById(R.id.fl_add_nueva_tarea);
         sp_prioridad = findViewById(R.id.sp_prioridad_nueva_tarea);
         lv_usuarios = findViewById(R.id.lv_usuario_tarea_nueva_tarea);
         sp_proyecto = findViewById(R.id.sp_asignar_proyecto_nueva_tarea);
+
+        tb_nueva_tarea = findViewById(R.id.tb_nueva_tarea);
+        setSupportActionBar(tb_nueva_tarea);
 
         adaptador_SP_PRO =  new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item,lista_proyectos);
         adaptador_SP_INT = new ArrayAdapter<>(this,android.R.layout.simple_list_item_single_choice,lista_integrantes);
@@ -113,21 +121,15 @@ public class Nueva_Tarea extends AppCompatActivity implements AdapterView.OnItem
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                                     lista_integrantes.add(dataSnapshot.getValue(Usuario.class));
-
-
                                 }
 
                                 @Override
                                 public void onCancelled(@NonNull DatabaseError databaseError) {
-
                                 }
                             });
-
                         }
                         adaptador_SP_INT.notifyDataSetChanged();
-
                     }
-
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
 
@@ -160,10 +162,24 @@ public class Nueva_Tarea extends AppCompatActivity implements AdapterView.OnItem
             }
         });
 
+        lv_usuarios.setAdapter(adaptador_SP_INT);
+        lv_usuarios.setOnItemClickListener(this);
+        lv_usuarios.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+    }
 
-        aceptar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.toolbar_action_nueva_reunion, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle presses on the action bar items
+        switch (item.getItemId()) {
+            case R.id.act_tool_aceptar:
+
                 if (campos_completos()){
 
                     tarea = new Tarea(titulo.getText().toString(), "Prioridad: "+sp_prioridad.getSelectedItem().toString(),descripcion.getText().toString(), (String.valueOf(titulo.getText().toString().hashCode()+sp_prioridad.getSelectedItem().toString().hashCode())), incisos, null);
@@ -180,17 +196,18 @@ public class Nueva_Tarea extends AppCompatActivity implements AdapterView.OnItem
                     finish();
 
                 }
-            }
-        });
 
-        lv_usuarios.setAdapter(adaptador_SP_INT);
-        lv_usuarios.setOnItemClickListener(this);
-        lv_usuarios.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+                return true;
+            case R.id.act_tool_cancelar:
 
+                setResult(RESULT_CANCELED);
+                finish();
 
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
-
-
 
     private boolean campos_completos() {
 

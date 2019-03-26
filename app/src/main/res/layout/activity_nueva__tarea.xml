@@ -11,37 +11,48 @@
     android:scrollbarStyle="insideOverlay"
     android:scrollbars="vertical">
 
-    <Toolbar
+    <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:id="@+id/tb_nueva_tarea"
         android:background="@color/colorPurpleLight"
         android:title="Nueva Tarea"
-        android:titleTextColor="@color/colorBlanco"/>
+        android:titleTextColor="@color/colorBlanco"
+        />
 
     <EditText
         android:id="@+id/et_tituo_nueva_tarea"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:hint="Ingrese el Titulo"
-        android:layout_below="@+id/tb_nueva_tarea"/>
+        android:layout_below="@+id/tb_nueva_tarea"
+        android:background="@drawable/boton_circular_blanco"
+        android:paddingLeft="10dp"
+        android:layout_marginHorizontal="5dp"
+        />
 
     <EditText
         android:id="@+id/et_descripcion_nueva_tarea"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_below="@+id/et_tituo_nueva_tarea"
         android:layout_marginTop="5dp"
-        android:hint="Ingrese una breve Descripción" />
+        android:hint="Ingrese una breve Descripción"
+        android:background="@drawable/boton_circular_blanco"
+        android:paddingLeft="10dp"
+        android:layout_marginHorizontal="5dp"
+
+        />
 
     <TextView
         android:id="@+id/tv_prioridad_nueva_tarea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/et_descripcion_nueva_tarea"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp"
+        android:layout_below="@id/et_descripcion_nueva_tarea"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="5dp"
         android:text="Prioridad:"
         android:textColor="#000000"
         android:textSize="18dp" />
@@ -50,15 +61,18 @@
         android:id="@+id/sp_prioridad_nueva_tarea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/tv_prioridad_nueva_tarea"
-        android:layout_marginStart="100dp" />
+        android:layout_below="@+id/tv_prioridad_nueva_tarea"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        />
 
     <TextView
         android:id="@+id/tv_seleccion_proyecto_nueva_tarea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_prioridad_nueva_tarea"
-        android:layout_marginLeft="5dp"
+        android:layout_below="@+id/et_descripcion_nueva_tarea"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
         android:text="Proyecto: "
         android:textColor="#000000"
@@ -66,16 +80,17 @@
 
     <Spinner
         android:id="@+id/sp_asignar_proyecto_nueva_tarea"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@id/tv_seleccion_proyecto_nueva_tarea"
-        android:layout_marginLeft="100dp" />
+        android:layout_below="@+id/tv_seleccion_proyecto_nueva_tarea"
+        android:layout_alignLeft="@+id/tv_seleccion_proyecto_nueva_tarea"
+        />
 
     <TextView
         android:id="@+id/tv_seleccion_usuario_nueva_tarea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_seleccion_proyecto_nueva_tarea"
+        android:layout_below="@+id/sp_asignar_proyecto_nueva_tarea"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
         android:text="Usuario: "
@@ -89,25 +104,32 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_below="@+id/tv_seleccion_usuario_nueva_tarea"
-
+        android:background="@drawable/boton_circular_blanco"
+        android:layout_marginHorizontal="5dp"
         />
 
     <EditText
         android:id="@+id/et_item_nueva_tarea"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignStart="@+id/tv_prioridad_nueva_tarea"
+        android:layout_height="50dp"
         android:layout_below="@+id/lv_usuario_tarea_nueva_tarea"
-        android:layout_marginEnd="50dp"
         android:layout_marginTop="10dp"
-        android:hint="Nombre del item" />
+        android:layout_marginLeft="5dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="50dp"
+        android:hint="Nombre del item"
+        android:background="@drawable/boton_circular_blanco"
+        android:paddingLeft="10dp"
+
+        />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fl_add_nueva_tarea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
         android:layout_alignTop="@+id/et_item_nueva_tarea"
         android:src="@drawable/ic_floating_chat"
         app:backgroundTint="@color/colorPurpleLight_2"
@@ -115,30 +137,12 @@
 
     <ListView
         android:id="@+id/lv_items_nueva_tarea"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/et_item_nueva_tarea"
-        android:layout_marginBottom="60dp"
-        android:layout_marginTop="10dp" />
-
-    <Button
-        android:id="@+id/bt_aceptar_nueva_tarea"
-        android:layout_width="110dp"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/bt_cancelar_nueva_tarea"
-        android:layout_alignTop="@+id/bt_cancelar_nueva_tarea"
-        android:layout_marginEnd="120dp"
-        android:text="aceptar" />
-
-    <Button
-
-        android:id="@+id/bt_cancelar_nueva_tarea"
-        android:layout_width="110dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="10dp"
-        android:text="cancelar" />
-
-
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="5dp"
+        android:background="@drawable/boton_circular_blanco"
+        android:layout_marginBottom="10dp"
+        />
 </RelativeLayout>
