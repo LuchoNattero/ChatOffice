@@ -11,8 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:paddingLeft="10dp"
-
-        android:hint="Nombre Completo"
+        android:singleLine="true"
+        android:hint="Nombre completo"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="60dp"
         android:background="@drawable/boton_circular_blanco"
@@ -24,12 +24,13 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:paddingLeft="10dp"
-        android:hint="Apellido Completo"
+        android:hint="Apellido completo"
         android:id="@+id/et_apellido_registrar_usuario"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="60dp"
         android:background="@drawable/boton_circular_blanco"
         android:layout_marginTop="5dp"
+        android:singleLine="true"
 
         />
 
@@ -37,25 +38,29 @@
         android:id="@+id/et_email_registrar_usuario"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:paddingLeft="10dp"        android:hint="Email"
+        android:paddingLeft="10dp"
+        android:hint="Email"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="60dp"
         android:layout_below="@+id/et_apellido_registrar_usuario"
         android:background="@drawable/boton_circular_blanco"
         android:layout_marginTop="5dp"
-
+        android:singleLine="true"
+        android:inputType="textEmailAddress"
         />
 
     <EditText
         android:id="@+id/et_contrasenia_registrar_usuario"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:paddingLeft="10dp"        android:hint="Contraseña"
+        android:paddingLeft="10dp"
+        android:hint="Contraseña"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="60dp"
         android:layout_below="@+id/et_email_registrar_usuario"
         android:background="@drawable/boton_circular_blanco"
         android:layout_marginTop="5dp"
+        android:inputType="textPassword"
 
         />
     <EditText
@@ -63,12 +68,13 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:paddingLeft="10dp"
-        android:hint="Repetir Contraseña"
+        android:hint="Repetir contraseña"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="60dp"
         android:layout_below="@+id/et_contrasenia_registrar_usuario"
         android:background="@drawable/boton_circular_blanco"
         android:layout_marginTop="5dp"
+        android:inputType="textPassword"
 
         />
 
@@ -78,7 +84,7 @@
         android:layout_height="50dp"
         android:paddingLeft="10dp"
         android:layout_below="@+id/et_contrasenia_repetir_registrar_usuario"
-        android:text="Usted es el Administrado"
+        android:text="¿Usted es el Administrador?"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:background="@drawable/boton_circular_blanco"
@@ -95,10 +101,10 @@
         android:id="@+id/et_id_registrar_usuario"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:hint="Ingrese el codigo de la organizacion"
+        android:hint="Ingrese el código de la organización"
         android:layout_marginTop="20dp"
         android:background="@drawable/boton_circular_blanco"
-
+        android:singleLine="true"
 
         />
     <!--

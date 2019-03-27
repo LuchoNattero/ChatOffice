@@ -109,7 +109,6 @@ public class Listado_Proyectos extends Fragment{
                                 } else {
                                     esJedeOrganizacion = false;
                                 }
-
                             }
 
                             @Override

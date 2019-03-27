@@ -16,7 +16,7 @@
         android:layout_height="50dp"
         android:id="@+id/tb_nueva_tarea"
         android:background="@color/colorPurpleLight"
-        android:title="Nueva Tarea"
+        android:title="Nueva tarea"
         android:titleTextColor="@color/colorBlanco"
         />
 
@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
-        android:hint="Ingrese el Titulo"
+        android:hint="Ingrese el título"
         android:layout_below="@+id/tb_nueva_tarea"
         android:background="@drawable/boton_circular_blanco"
         android:paddingLeft="10dp"
@@ -38,7 +38,7 @@
         android:layout_height="50dp"
         android:layout_below="@+id/et_tituo_nueva_tarea"
         android:layout_marginTop="5dp"
-        android:hint="Ingrese una breve Descripción"
+        android:hint="Ingrese una breve descripción"
         android:background="@drawable/boton_circular_blanco"
         android:paddingLeft="10dp"
         android:layout_marginHorizontal="5dp"

@@ -154,6 +154,15 @@ public class MainRegistraUsuario extends AppCompatActivity {
             }
         });
 
+        cancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainRegistraUsuario.this,ActivityLogeoUsuario.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
         aceptar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

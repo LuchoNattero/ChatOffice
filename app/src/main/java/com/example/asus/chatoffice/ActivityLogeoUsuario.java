@@ -75,8 +75,11 @@ public class ActivityLogeoUsuario extends AppCompatActivity {
 
                 String st_email = et_email.getText().toString();
                 String st_pass = et_pass.getText().toString();
-                if(camposCompletos()) {
+                if(!camposCompletos()) {
+                    Toast.makeText(getApplicationContext(),"Complete ambos campos",Toast.LENGTH_SHORT).show();
+                }
 
+                else{
                     mAuth.signInWithEmailAndPassword(st_email, st_pass).addOnCompleteListener(ActivityLogeoUsuario.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
