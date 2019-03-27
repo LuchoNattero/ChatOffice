@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NuevaReunion">
+    <EditText
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/et_motivo_nueva_reunion"
+        android:hint="Ingrese el motivo"
+        android:background="@drawable/boton_circular_blanco"
+        android:layout_marginHorizontal="5dp"
+        android:paddingLeft="10dp"
+
+        />
+
+    <EditText
+        android:id="@+id/et_dia_nueva_reunion"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/et_motivo_nueva_reunion"
+        android:layout_marginTop="10dp"
+        android:hint="Fecha (dd/mm)"
+        android:background="@drawable/boton_circular_blanco"
+        android:layout_marginHorizontal="5dp"
+        android:paddingLeft="10dp"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:text="Ingrese el horario: "
+        android:textSize="18dp"
+        android:id="@+id/tv_horario_nueva_reunion"
+        android:layout_below="@+id/et_dia_nueva_reunion"
+        android:paddingLeft="10dp"
+
+        />
+    <Spinner
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sp_horarios_nueva_reunion"
+        android:layout_alignTop="@+id/tv_horario_nueva_reunion"
+        android:layout_alignLeft="@+id/tv_horario_nueva_reunion"
+        android:layout_marginLeft="150dp"
+
+        />
+    <EditText
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/sp_horarios_nueva_reunion"
+        android:id="@+id/et_lugar_nueva_reunion"
+        android:hint="Ingrese el lugar de la reunión"
+        android:background="@drawable/boton_circular_blanco"
+        android:layout_marginHorizontal="5dp"
+        android:paddingLeft="10dp"
+
+
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Seleccione los integrantes"
+        android:textSize="18dp"
+        android:id="@+id/tv_integrantes_nueva_reunion"
+        android:layout_below="@+id/et_lugar_nueva_reunion"
+        android:paddingLeft="10dp"
+
+        />
+    <ListView
+        android:layout_marginHorizontal="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lv_integrantes_nueva_reunion"
+        android:layout_below="@+id/tv_integrantes_nueva_reunion"
+        android:layout_marginBottom="70dp"
+        android:background="@drawable/boton_circular_blanco"
+
+        />
+
+
+    <Button
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:text="aceptar"
+        android:id="@+id/bt_aceptar_nueva_reunion"
+        android:layout_alignTop="@+id/bt_cancelar_nueva_reunion"
+        android:layout_alignEnd="@+id/bt_cancelar_nueva_reunion"
+        android:layout_marginEnd="120dp"
+        android:background="@drawable/boton_circular_blanco"
+        android:textColor="@color/colorPurpleLight_2"
+
+        />
+
+    <Button
+
+        android:id="@+id/bt_cancelar_nueva_reunion"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:text="cancelar"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/boton_circular_blanco"
+        android:textColor="@color/colorPurpleLight_2"
+        />
+</RelativeLayout>

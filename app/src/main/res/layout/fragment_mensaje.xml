@@ -28,6 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_nombre_usuario_fragment_mensaje"
             android:text="Mensaje del usuario"
+            android:textColor="@color/colorGris"
             android:id="@+id/tv_mensaje_fragmento_mensajes"
             />
     </RelativeLayout>

@@ -137,7 +137,8 @@ public class MainReuniones extends Fragment {
                     startActivityForResult(intent, 0);
                 }
                 else {
-                    Toast.makeText(getContext(),"Debe ser el administrador de la organizacion",Toast.LENGTH_SHORT).show();
+                    intent = new Intent(getContext(),NuevaReunionPeticion.class);
+                    startActivityForResult(intent, 0);
                 }
             }
         });
