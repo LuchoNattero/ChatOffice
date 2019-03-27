@@ -153,7 +153,7 @@ public class MainRegistraUsuario extends AppCompatActivity {
 
             }
         });
-
+//Agregar funcionamiento botón cancelar
         cancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
