@@ -4,7 +4,15 @@ import java.io.Serializable;
 
 public class Mensaje implements Serializable {
 
-    String mensaje,hora;
+    String mensaje,hora,autor;
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
 
     public String getMensaje() {
         return mensaje;

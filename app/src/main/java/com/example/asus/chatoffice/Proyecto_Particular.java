@@ -16,9 +16,11 @@ import android.widget.ListView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
+import com.example.asus.chatoffice.Adaptadores.Adaptador_mensajes;
 import com.example.asus.chatoffice.FireBase.Reference_Fire_Base;
 import com.example.asus.chatoffice.Objetos.Mensaje;
 import com.example.asus.chatoffice.Objetos.Proyecto;
+import com.example.asus.chatoffice.Objetos.Usuario;
 import com.example.asus.chatoffice.Reference.Reference;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -35,14 +37,14 @@ import java.util.Map;
 public class Proyecto_Particular extends AppCompatActivity {
 
     ListView lv_historial;
-    List<String>lista_historia = new ArrayList<>();
+    List<Mensaje>lista_historia = new ArrayList<>();
     Intent intent;
     Toolbar toolbar;
-    Button bt_comunicado;
-    ArrayAdapter<String> itemsAdapter;
+//    ArrayAdapter<String> itemsAdapter;
     Proyecto proyecto;
-    ProgressDialog progressDialog_principal;
     FloatingActionButton fl_comunicado;
+    Adaptador_mensajes adaptador;
+    Usuario usuario;
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     @SuppressLint("ResourceAsColor")
@@ -53,19 +55,15 @@ public class Proyecto_Particular extends AppCompatActivity {
 
         intent = getIntent();
         toolbar = findViewById(R.id.tb_comunicado);
-//        bt_comunicado = findViewById(R.id.bt_comunicado_chat_particular);
+
         fl_comunicado = findViewById(R.id.fl_comunicado_chat_particular);
 
         lv_historial = findViewById(R.id.lv_chat_particular);
         proyecto = (Proyecto) intent.getSerializableExtra(Reference.CHAT);
 
-        itemsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, lista_historia);
-        lv_historial.setAdapter(itemsAdapter);
+        adaptador = new Adaptador_mensajes(this.getApplicationContext(),lista_historia);
+        lv_historial.setAdapter(adaptador);
 
-//        progressDialog_principal = new ProgressDialog(this.getApplicationContext());
-//        progressDialog_principal.setMessage("Cargando...");
-//        progressDialog_principal.setCancelable(false);
-//        progressDialog_principal.show();
 
         toolbar.setTitle(proyecto.getTitulo());
         toolbar.setTitleTextColor(R.color.colorBlanco);
@@ -86,17 +84,29 @@ public class Proyecto_Particular extends AppCompatActivity {
 
                                 Mensaje msj = dataMSJ.getValue(Mensaje.class);
 
-                                lista_historia.add(msj.getMensaje());
+                                lista_historia.add(msj);
                             }
-
-                            itemsAdapter.notifyDataSetChanged();
-//                            progressDialog_principal.dismiss();
+                            adaptador.notifyDataSetChanged();
+//                            itemsAdapter.notifyDataSetChanged();
                         }
 
                         @Override
                         public void onCancelled(@NonNull DatabaseError databaseError) {
 
                         }
+                  });
+                  database.getReference(Reference_Fire_Base.REFERENCE_DATABASE_GUARDAR_USUARIO+"/"+FirebaseAuth.getInstance().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+                      @Override
+                      public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                          usuario = dataSnapshot.getValue(Usuario.class);
+
+                      }
+
+                      @Override
+                      public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                      }
                   });
             }
         });
@@ -107,6 +117,7 @@ public class Proyecto_Particular extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent_chat = new Intent(getApplicationContext(),Pantilla_Comunicado.class);
+                intent_chat.putExtra("usuario",usuario);
                 startActivityForResult(intent_chat,1);
             }
         });
@@ -120,11 +131,9 @@ public class Proyecto_Particular extends AppCompatActivity {
             if(resultCode == RESULT_OK){
 
                 Mensaje comunicado = (Mensaje) data.getSerializableExtra(Reference.COMUNICADO);
-                lista_historia.add(comunicado.getMensaje());
+                lista_historia.add(comunicado);
 
                 DatabaseReference nuevoProyectoRef = database.getReference(Reference_Fire_Base.REFERENCE_DATABASE_MENSAJES+"/"+ proyecto.getTitulo()).child(Reference_Fire_Base.REFERENCE_DATABASE_HISTORIAL_MENSAJES);
-
-                // Se separo los proyectos del usuario, estan identificados por el id de los usuarios
 
 
                 Map<String, Object> historalUpdate = new HashMap<>();

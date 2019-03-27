@@ -9,13 +9,17 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.asus.chatoffice.Objetos.Mensaje;
+import com.example.asus.chatoffice.Objetos.Usuario;
 import com.example.asus.chatoffice.Reference.Reference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Pantilla_Comunicado extends AppCompatActivity {
 
     EditText et_comunicado;
     Button bt_enviar,bt_cancelar;
     Intent intent_comunicado;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,8 +37,9 @@ public class Pantilla_Comunicado extends AppCompatActivity {
 
                 if (et_comunicado.getText().toString().length() > 20) {
                     Mensaje msj = new Mensaje();
+                    Usuario usuario = (Usuario) intent_comunicado.getSerializableExtra("usuario");
+                    msj.setAutor(usuario.toString());
                     msj.setMensaje(et_comunicado.getText().toString());
-
                     intent_comunicado.putExtra(Reference.COMUNICADO,msj);
                     setResult(RESULT_OK, intent_comunicado);
                     finish();
