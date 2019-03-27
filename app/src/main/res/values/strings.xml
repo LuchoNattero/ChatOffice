@@ -3,7 +3,7 @@
     <string name="title_activity_main_raelizar_tarea">MainRaelizarTarea</string>
     <string name="tab_text_1">Pasos</string>
     <string name="tab_text_2">Comentarios</string>
-    <string name="tab_text_3">Informacion</string>
+    <string name="tab_text_3">Información</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
 
