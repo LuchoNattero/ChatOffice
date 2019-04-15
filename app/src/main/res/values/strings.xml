@@ -31,4 +31,51 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="title_activity_main_drawer">MainActivityDrawer</string>
+
+
+    <string name="nombre_usuario">Nombre</string>
+    <string name="nombre_completo_usuario">Nombre completo</string>
+    <string name="apellido_usuario">Apellido</string>
+    <string name="apellido_completo_usuario">Apellido completo</string>
+    <string name="email_usuario">Email</string>
+    <string name="contraseña_usuario">Contraseña</string>
+    <string name="repetir_contraseña_usuario">Repetir contraseña</string>
+    <string name="ing_organizacion">Ingrese la organización</string>
+    <string name="crear_org">¿Quiere crear una organizacion?</string>
+    <string name="titulo_configuracion">CONFIGURACIÓN</string>
+    <string name="org_perteneciente">Organizacion perteneciente</string>
+    <string name="grupo">Grupo</string>
+    <string name="prioridad">Prioridad</string>
+    <string name="usuario">Usuario</string>
+    <string name="ing_titulo">Ingrese el titulo</string>
+    <string name="ing_breve_descrp">Ingrese una breve descripción</string>
+    <string name="nom_item">Nombre del item</string>
+    <string name="ing_motivo">Ingrese el motivo</string>
+    <string name="ing_horario">Ingrese el horario:</string>
+    <string name="fecha">Fecha (dd/mm)</string>
+    <string name="ing_lugar">Ingrese el lugar de la reunión</string>
+
+
+
+    <string name="boton_aceptar">ACEPTAR</string>
+    <string name="boton_cancelar">CANCELAR</string>
+    <string name="seleccione_los_integrantes">Seleccione los integrantes</string>
+    <string name="comunicar">Comunicar</string>
+    <string name="x">X</string>
+    <string name="que_quieres_comunicar">¿Que quieres comunicar?</string>
+    <string name="a_adir_comentarios">Añadir Comentarios</string>
+    <string name="nombre_proyecto">Nombre Proyecto</string>
+    <string name="asignar_lider_de_proyecto">Asignar administrador del grupo de trabajo</string>
+    <string name="seleccionar_los_integrantes">Seleccionar los integrantes</string>
+    <string name="nombre_del_grupo_de_trabajo">Nombre del grupo de trabajo</string>
+    <string name="no_hay_tareas_pendientes">No hay tareas pendientes</string>
+    <string name="email">Email</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="iniciar_sesi_n">Iniciar sesión</string>
+    <string name="registrarse_aqu">Registrarse aquí</string>
+    <string name="cambiar">CAMBIAR</string>
+    <string name="cofiguracion">COFIGURACION</string>
+    <string name="informaci_n">INFORMACIÓN</string>
+    <string name="informaci_n_del_usuario">INFORMACIÓN DEL USUARIO</string>
+
 </resources>

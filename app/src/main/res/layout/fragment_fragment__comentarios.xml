@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="60dp"
-        android:hint="Añadir Comentarios"
+        android:hint="@string/a_adir_comentarios"
         android:layout_marginRight="50dp"
         android:layout_marginLeft="5dp"/>
 
@@ -43,7 +43,7 @@
         android:layout_marginRight="10dp"
         android:clickable="true"
         android:src="@drawable/ic_floating_chat"
-        app:backgroundTint="@color/colorPurpleLight_2" />
+        app:backgroundTint="@color/colorAccent" />
 
 
 </RelativeLayout>

@@ -1,6 +1,7 @@
 package com.example.asus.chatoffice;
 
 import android.content.Intent;
+import android.graphics.drawable.GradientDrawable;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,11 +10,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.asus.chatoffice.FireBase.Reference_Fire_Base;
+import com.example.asus.chatoffice.Objetos.Organizacion;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class ActivityLogeoUsuario extends AppCompatActivity {
@@ -23,6 +34,10 @@ public class ActivityLogeoUsuario extends AppCompatActivity {
 
     EditText et_email,et_pass;
     Button bt_ingresar,bt_registrar;
+
+    List<Organizacion> list_organizacion = new ArrayList<>();
+
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

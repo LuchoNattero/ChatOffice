@@ -6,41 +6,48 @@
     android:layout_height="match_parent"
     tools:context=".MainRegistraUsuario">
 
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:id="@+id/tb_registrar_usuario"
+        />
+
     <EditText
         android:id="@+id/et_nombre_registrar_usuario"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/editText_alto"
         android:paddingLeft="10dp"
         android:singleLine="true"
-        android:hint="Nombre completo"
-        android:layout_marginLeft="5dp"
+        android:hint="@string/nombre_completo_usuario"
+        android:layout_marginLeft="@dimen/sangria"
         android:layout_marginRight="60dp"
         android:background="@drawable/boton_circular_blanco"
         android:layout_marginTop="5dp"
-
+        android:layout_below="@+id/tb_registrar_usuario"
         />
     <EditText
         android:layout_below="@+id/et_nombre_registrar_usuario"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:paddingLeft="10dp"
-        android:hint="Apellido completo"
+        android:layout_height="@dimen/editText_alto"
+        android:hint="@string/apellido_completo_usuario"
         android:id="@+id/et_apellido_registrar_usuario"
-        android:layout_marginLeft="5dp"
+        android:layout_marginLeft="@dimen/sangria"
         android:layout_marginRight="60dp"
-        android:background="@drawable/boton_circular_blanco"
         android:layout_marginTop="5dp"
+        android:paddingLeft="10dp"
         android:singleLine="true"
+        android:background="@drawable/boton_circular_blanco"
 
         />
 
     <EditText
         android:id="@+id/et_email_registrar_usuario"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/editText_alto"
         android:paddingLeft="10dp"
-        android:hint="Email"
-        android:layout_marginLeft="5dp"
+        android:hint="@string/email_usuario"
+        android:layout_marginLeft="@dimen/sangria"
         android:layout_marginRight="60dp"
         android:layout_below="@+id/et_apellido_registrar_usuario"
         android:background="@drawable/boton_circular_blanco"
@@ -52,10 +59,10 @@
     <EditText
         android:id="@+id/et_contrasenia_registrar_usuario"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/editText_alto"
         android:paddingLeft="10dp"
-        android:hint="Contraseña"
-        android:layout_marginLeft="5dp"
+        android:hint="@string/contraseña_usuario"
+        android:layout_marginLeft="@dimen/sangria"
         android:layout_marginRight="60dp"
         android:layout_below="@+id/et_email_registrar_usuario"
         android:background="@drawable/boton_circular_blanco"
@@ -66,10 +73,10 @@
     <EditText
         android:id="@+id/et_contrasenia_repetir_registrar_usuario"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/editText_alto"
         android:paddingLeft="10dp"
-        android:hint="Repetir contraseña"
-        android:layout_marginLeft="5dp"
+        android:hint="@string/repetir_contraseña_usuario"
+        android:layout_marginLeft="@dimen/sangria"
         android:layout_marginRight="60dp"
         android:layout_below="@+id/et_contrasenia_registrar_usuario"
         android:background="@drawable/boton_circular_blanco"
@@ -81,66 +88,56 @@
     <Switch
         android:id="@+id/sh_pregunta_registrar_usuario"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/editText_alto"
         android:paddingLeft="10dp"
         android:layout_below="@+id/et_contrasenia_repetir_registrar_usuario"
-        android:text="¿Usted es el Administrador?"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
+        android:text="@string/crear_org"
+        android:layout_marginLeft="@dimen/sangria"
+        android:layout_marginRight="@dimen/sangria"
         android:background="@drawable/boton_circular_blanco"
 
         android:layout_marginTop="5dp"
 
         />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:paddingLeft="10dp"
-        android:layout_below="@+id/sh_pregunta_registrar_usuario"
-        android:id="@+id/et_id_registrar_usuario"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:hint="Ingrese el código de la organización"
-        android:layout_marginTop="20dp"
+    <AutoCompleteTextView
+        android:id="@+id/at_text_organizacion"
+        android:layout_width="250dp"
+        android:layout_height="@dimen/editText_alto"
+        android:hint="@string/ing_organizacion"
+        android:completionThreshold="1"
+        android:completionHint="Ingrese la Organización"
         android:background="@drawable/boton_circular_blanco"
-        android:singleLine="true"
-
+        android:paddingLeft="10dp"
+        android:layout_marginLeft="@dimen/sangria"
+        android:layout_marginRight="@dimen/sangria"
+        android:layout_marginTop="@dimen/espacio_top"
+        android:layout_below="@id/sh_pregunta_registrar_usuario"
         />
-    <!--
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/lv_registrar_usuario"
-        android:layout_below="@+id/et_id_registrar_usuario"
-        android:layout_marginBottom="160dp"/>
--->
+
     <Button
         android:id="@+id/bt_aceptar_registrar_usuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/bt_cancelar_registrar_usuario"
-        android:layout_marginHorizontal="40dp"
-        android:layout_marginBottom="70dp"
-        android:text="aceptar"
+        android:layout_marginHorizontal="@dimen/boton_horizontal_grande"
+        android:text="@string/boton_aceptar"
         android:background="@drawable/boton_circular_blanco"
-        android:textColor="@color/colorPurpleLight_2"
+        android:textColor="@color/colorAccent"
+        android:layout_below="@+id/at_text_organizacion"
+        android:layout_marginTop="@dimen/espacio_top"
 
         />
 
     <Button
-
-        android:id="@+id/bt_cancelar_registrar_usuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="40dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="30dp"
-        android:text="cancelar"
+        android:id="@+id/bt_cancelar_registrar_usuario"
+        android:text="@string/boton_cancelar"
+        android:layout_marginHorizontal="@dimen/boton_horizontal_grande"
+        android:layout_below="@+id/bt_aceptar_registrar_usuario"
+        android:layout_marginTop="@dimen/espacio_top"
         android:background="@drawable/boton_circular_blanco"
-        android:textColor="@color/colorPurpleLight_2"
+        android:textColor="@color/colorAccent"
         />
-
-
 
 </RelativeLayout>

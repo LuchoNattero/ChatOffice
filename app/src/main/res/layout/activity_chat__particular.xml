@@ -37,8 +37,9 @@
         android:layout_marginBottom="10dp"
         android:clickable="true"
         android:src="@drawable/ic_realizar_comentario"
-        app:backgroundTint="@color/colorPurpleLight_2"
-        app:rippleColor="@android:color/background_light"/>
+        app:backgroundTint="@color/colorAccent"
+        app:rippleColor="@android:color/background_light"
+        android:focusable="true" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fl_add_reunion"
@@ -46,10 +47,10 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/fl_comunicado_chat_particular"
         android:layout_marginTop="5dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
         android:src="@drawable/ic_add_reunion_2"
-        app:backgroundTint="@color/colorPurpleLight_2"
+        app:backgroundTint="@color/colorAccent"
         app:rippleColor="@android:color/background_light" />
 
     <android.support.design.widget.FloatingActionButton
@@ -57,10 +58,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/fl_add_reunion"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
         android:src="@drawable/ic_add_tarea"
-        app:backgroundTint="@color/colorPurpleLight_2"
+        app:backgroundTint="@color/colorAccent"
         app:rippleColor="@android:color/background_light" />
 
 

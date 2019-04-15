@@ -50,7 +50,16 @@
         <activity
             android:name=".MainConfiguracion"
             android:screenOrientation="portrait" />
-        <activity android:name=".NuevaReunion"></activity>
+        <activity
+            android:name=".NuevaReunion"
+            android:screenOrientation="portrait"
+            />
+
+        <activity
+            android:name=".NuevaReunionPeticion"
+            android:screenOrientation="portrait"
+
+            />
     </application>
 
 </manifest>

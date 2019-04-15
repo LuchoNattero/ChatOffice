@@ -1,16 +1,17 @@
 package com.example.asus.chatoffice;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.example.asus.chatoffice.FireBase.Reference_Fire_Base;
 import com.example.asus.chatoffice.Objetos.Organizacion;
@@ -28,10 +29,13 @@ import java.util.Map;
 
 public class MainConfiguracion extends AppCompatActivity {
 
-    EditText et_nombre,et_apellido,et_organizacion;
-    Button bt_cambiar_organizacion;
+//    EditText et_nombre,et_apellido;
+//    AutoCompleteTextView    at_organizacion;
+//    Button bt_cambiar_organizacion;
     List<Organizacion> lista_organizacion = new ArrayList<>();
     Usuario usuario;
+
+    TextView tv_apellido,tv_nombre,tv_organizacion;
 
     FirebaseDatabase database;
     FirebaseAuth mAur;
@@ -44,10 +48,16 @@ public class MainConfiguracion extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         mAur = FirebaseAuth.getInstance();
 
-        et_apellido = findViewById(R.id.et_apellido_configuracion);
+/*        et_apellido = findViewById(R.id.et_apellido_configuracion);
         et_nombre = findViewById(R.id.et_nombre_configuracion);
-        et_organizacion = findViewById(R.id.et_organizacion_configuracion);
-        bt_cambiar_organizacion = findViewById(R.id.bt_cambiar_organizacion_configuracion);
+        at_organizacion = findViewById(R.id.at_organizacion_configuracion);
+        bt_cambiar_organizacion = findViewById(R.id.bt_cambiar_organizacion_configuracion);*/
+
+
+        tv_apellido = findViewById(R.id.tv_apellido_main_configuracion);
+        tv_nombre = findViewById(R.id.tv_nombre_main_configuracion);
+        tv_organizacion = findViewById(R.id.tv_organizacion_main_configuracion);
+
 
         database.getReference(Reference_Fire_Base.REFERENCE_DATABASE_ORGANIZACION).addValueEventListener(new ValueEventListener() {
             @Override
@@ -59,12 +69,14 @@ public class MainConfiguracion extends AppCompatActivity {
                     Organizacion org = data.getValue(Organizacion.class);
                     lista_organizacion.add(org);
                 }
+
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
         });
+
         database.getReference(Reference_Fire_Base.REFERENCE_DATABASE_GUARDAR_USUARIO+"/"+mAur.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -72,9 +84,9 @@ public class MainConfiguracion extends AppCompatActivity {
                 if (dataSnapshot.getKey().equals(mAur.getUid())){
 
                     usuario = dataSnapshot.getValue(Usuario.class);
-                    et_nombre.setText(usuario.getSt_nombre());
-                    et_apellido.setText(usuario.getSt_apallido());
-                    et_organizacion.setText(usuario.getSt_idEmpresa());
+                    tv_nombre.setText(usuario.getSt_nombre());
+                    tv_apellido.setText(usuario.getSt_apallido());
+                    tv_organizacion.setText(usuario.getSt_idEmpresa());
                 }
             }
             @Override
@@ -82,13 +94,19 @@ public class MainConfiguracion extends AppCompatActivity {
 
             }
         });
-        bt_cambiar_organizacion.setOnClickListener(new View.OnClickListener() {
+/*        bt_cambiar_organizacion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 createAdvertenciaCambiarOrganizacion();
             }
-        });
+        });*/
+
+
+//        adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line,lista_organizacion);
+//
+//        at_organizacion.setThreshold(1);
+//        at_organizacion.setAdapter(adapter);
     }
     private void sacarUsuarioOrganizacion(Usuario usuario) {
         database.getReference(Reference_Fire_Base.REFERENCE_DATABASE_ORGANIZACION+"/"+usuario.getSt_idEmpresa()+"/"+ Reference_Fire_Base.LISTA_MIEMBROS).child(usuario.getSt_id()).removeValue();
@@ -98,7 +116,7 @@ public class MainConfiguracion extends AppCompatActivity {
             boolean bandera = false;
             int i = 0;
             while (!bandera) {
-                if (lista_organizacion.get(i).getSt_id_organizacion().equals(et_organizacion.getText().toString())) {
+                if (lista_organizacion.get(i).getSt_id_organizacion().equals(tv_organizacion.getText().toString())) {
 
                     bandera = true;
                     Organizacion org = lista_organizacion.get(i);
@@ -161,10 +179,10 @@ public class MainConfiguracion extends AppCompatActivity {
                     public void onClick(DialogInterface dialog,
                                         int which) {
 
-                        if(existeOrganizacion(et_organizacion.getText().toString())){// se rompe cuando busca una organizacion que no esta
+                        if(existeOrganizacion(tv_organizacion.getText().toString())){// se rompe cuando busca una organizacion que no esta
 //                          Se qqueda colgado cuando se apreta "Si"
                             sacarUsuarioOrganizacion(usuario);
-                            usuario.setSt_idEmpresa(et_organizacion.getText().toString());
+                            usuario.setSt_idEmpresa(tv_organizacion.getText().toString());
                             actualizarOrganizacion(usuario);
                             actualizarUsuario(usuario);
                         }

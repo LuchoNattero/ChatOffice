@@ -132,14 +132,16 @@ public class MainReuniones extends Fragment {
             @Override
             public void onClick(View view) {
 
-                if(esJedeOrganizacion) {
+/*                if(esJedeOrganizacion) {
                     intent = new Intent(getContext(), NuevaReunion.class);
                     startActivityForResult(intent, 0);
                 }
                 else {
                     intent = new Intent(getContext(),NuevaReunionPeticion.class);
                     startActivityForResult(intent, 0);
-                }
+                }*/
+                intent = new Intent(getContext(), NuevaReunion.class);
+                startActivityForResult(intent, 0);
             }
         });
         adaptadorReuniones = new AdaptadorReuniones(getContext(), lista_reunion);

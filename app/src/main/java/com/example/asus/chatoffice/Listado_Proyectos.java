@@ -1,6 +1,5 @@
 package com.example.asus.chatoffice;
 
-import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,16 +9,12 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.Toolbar;
-
 import com.example.asus.chatoffice.Adaptadores.adaptador_chat;
 import com.example.asus.chatoffice.FireBase.Reference_Fire_Base;
 import com.example.asus.chatoffice.Objetos.Organizacion;
@@ -53,7 +48,6 @@ public class Listado_Proyectos extends Fragment{
     FloatingActionButton fl_add_chat;
     boolean esJedeOrganizacion = false;
     FirebaseUser user;
-    DatabaseReference databaseReference;
     ProgressDialog progressDialog_principal;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     public Listado_Proyectos() {
@@ -231,24 +225,14 @@ public class Listado_Proyectos extends Fragment{
 
         }
     }
-//    public String getJefe(){return this.esJedeOrganizacion;}
 
     @Override
     public void onSaveInstanceState(@Nullable Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
-        // El bundle sera guardado y enviado al onCreate() de la Activity.
-//        savedInstanceState.putString("esJefe", esJedeOrganizacion);
+
 
         savedInstanceState.putSerializable("lista_proyecto", (Serializable) lista_proyectos);
     }
 
-/*    @Override
-    public void onViewStateRestored(@Nullable Bundle savedInstanceState) {
-        super.onViewStateRestored(savedInstanceState);
-        if (savedInstanceState != null) {
-//            esJedeOrganizacion = savedInstanceState.getString("esJefe");
-            lista_proyectos = (List<Proyecto>) savedInstanceState.getSerializable("lista_proyecto");
 
-        }
-    }*/
 }

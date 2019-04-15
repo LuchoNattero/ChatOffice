@@ -6,4 +6,12 @@
     <dimen name="appbar_padding_top">8dp</dimen>
     <dimen name="nav_header_vertical_spacing">8dp</dimen>
     <dimen name="nav_header_height">176dp</dimen>
+
+    <dimen name="editText_alto">50dp</dimen>
+    <dimen name="boton_horizontal_grande">40dp</dimen>
+    <dimen name="sangria">10dp</dimen>
+    <dimen name="espacio_top">10dp</dimen>
+    <dimen name="boton_ancho_medianos">110dp</dimen>
+    <dimen name="boton_alto_mediano">55dp</dimen>
+    <dimen name="vw_configuracion">1dp</dimen>
 </resources>

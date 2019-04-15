@@ -1,19 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <color name="colorPrimary">#d51457</color>
+    <color name="colorPrimaryDark">#bc114d</color>
+    <color name="colorAccent">#253696</color>
+
+    <!--
     <color name="colorPrimary">#3d354b</color>
     <color name="colorPrimaryDark">#11012a</color>
     <color name="colorAccent">#11012a</color>
-    <color name="colorRojo">#e84b4d</color>
+
+    -->
+
     <color name="colorRojoDark">#b53f41</color>
     <color name="colorTeal">#00796B</color>
-    <color name="colorIndigo">#3F51B5</color>
-    <color name="colorFuncia">#ff1768</color>
     <color name="colorIndigoClaro">#ced5ff</color>
     <color name="colorPurpleDark">#11012a</color>
     <color name="colorPurpleLight">#3d354b</color>
-    <color name="colorPurpleLight_2">#57417c</color>
     <color name="colorGris">#b3b3b3</color>
     <color name="colorPurpleSuperLight">#b7a0df</color>
     <color name="colorBlanco">#FFFFFF</color>
-    <color name="colorCeleste">#7B52BEC8</color>b3b3b3
+
+<!--*********************************************-->
+
+    <color name="colorCeleste">#4bb7c1</color>
+    <color name="colorFuncia">#ff1768</color>
+    <color name="colorRojo">#ff2428</color>
+    <color name="colorAmarillo">#f9e054</color>
+    <color name="colorPurpleLight_2">#553c7e</color>
+    <color name="colorVerdeAgua">#3bb892</color>
+    <color name="colorIndigo">#253696</color>
 </resources>

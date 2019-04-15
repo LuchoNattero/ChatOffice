@@ -26,8 +26,6 @@
             android:layout_marginBottom="10dp"
             android:layout_marginEnd="10dp"
             android:src="@drawable/ic_floating_chat"
-            app:backgroundTint="@color/colorPurpleLight_2"
-            app:rippleColor="@android:color/background_light"
             android:id="@+id/fl_add_chat"
             />
         <TextView

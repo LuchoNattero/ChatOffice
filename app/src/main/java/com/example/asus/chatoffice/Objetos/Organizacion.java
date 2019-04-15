@@ -7,7 +7,7 @@ import java.util.List;
 public class Organizacion  implements Serializable{
 
     String st_id_organizacion;
-    List<String> lista_miembros_organizacion = new ArrayList<>(),lista_peticiones = new ArrayList<>();
+    List<String> lista_miembros_organizacion = new ArrayList<>(),lista_peticiones = new ArrayList<>(),lista_jefes = new ArrayList<>();
     String jefe;
 
 
@@ -25,6 +25,20 @@ public class Organizacion  implements Serializable{
         this.lista_miembros_organizacion = lista_miembros_organizacion;
         this.lista_peticiones = lista_peticiones;
         this.jefe = jefe;
+    }
+
+    public Organizacion(String st_id_organizacion, List<String> lista_miembros_organizacion, List<String> lista_jefes) {
+        this.st_id_organizacion = st_id_organizacion;
+        this.lista_miembros_organizacion = lista_miembros_organizacion;
+        this.lista_jefes = lista_jefes;
+    }
+
+    public List<String> getLista_jefes() {
+        return lista_jefes;
+    }
+
+    public void setLista_jefes(List<String> lista_jefes) {
+        this.lista_jefes = lista_jefes;
     }
 
     public List<String> getLista_peticiones() {
@@ -61,10 +75,6 @@ public class Organizacion  implements Serializable{
 
     @Override
     public String toString() {
-        return "Organizacion{" +
-                "st_id_organizacion='" + st_id_organizacion + '\'' +
-                ", lista_miembros_organizacion=" + lista_miembros_organizacion +
-                ", Jefe=" + jefe +
-                '}';
+        return  st_id_organizacion;
     }
 }

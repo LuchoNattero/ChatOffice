@@ -5,16 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".NuevaReunion">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tb_nueva_reunion"
+        android:background="@color/colorPrimary"
+        />
     <EditText
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:id="@+id/et_motivo_nueva_reunion"
-        android:hint="Ingrese el motivo"
+        android:hint="@string/ing_motivo"
         android:background="@drawable/boton_circular_blanco"
         android:layout_marginHorizontal="5dp"
         android:paddingLeft="10dp"
-
+        android:layout_below="@+id/tb_nueva_reunion"
         />
 
     <EditText
@@ -22,8 +29,8 @@
         android:layout_width="150dp"
         android:layout_height="50dp"
         android:layout_below="@+id/et_motivo_nueva_reunion"
-        android:layout_marginTop="10dp"
-        android:hint="Fecha (dd/mm)"
+        android:layout_marginTop="@dimen/espacio_top"
+        android:hint="@string/fecha"
         android:background="@drawable/boton_circular_blanco"
         android:layout_marginHorizontal="5dp"
         android:paddingLeft="10dp"
@@ -33,12 +40,13 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:text="Ingrese el horario: "
+        android:text="@string/ing_horario"
         android:textSize="18dp"
         android:id="@+id/tv_horario_nueva_reunion"
-        android:layout_below="@+id/et_dia_nueva_reunion"
-        android:paddingLeft="10dp"
+        android:layout_alignLeft="@+id/et_dia_nueva_reunion"
+        android:layout_marginLeft="160dp"
+        android:layout_below="@+id/et_motivo_nueva_reunion"
+        android:layout_marginTop="23dp"
 
         />
     <Spinner
@@ -55,9 +63,9 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:layout_below="@+id/sp_horarios_nueva_reunion"
+        android:layout_below="@+id/et_dia_nueva_reunion"
         android:id="@+id/et_lugar_nueva_reunion"
-        android:hint="Ingrese el lugar de la reunión"
+        android:hint="@string/ing_lugar"
         android:background="@drawable/boton_circular_blanco"
         android:layout_marginHorizontal="5dp"
         android:paddingLeft="10dp"
@@ -67,7 +75,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Seleccione los integrantes"
+        android:text="@string/seleccione_los_integrantes"
         android:textSize="18dp"
         android:id="@+id/tv_integrantes_nueva_reunion"
         android:layout_below="@+id/et_lugar_nueva_reunion"
@@ -89,13 +97,13 @@
     <Button
         android:layout_width="110dp"
         android:layout_height="wrap_content"
-        android:text="aceptar"
+        android:text="@string/boton_aceptar"
         android:id="@+id/bt_aceptar_nueva_reunion"
         android:layout_alignTop="@+id/bt_cancelar_nueva_reunion"
         android:layout_alignEnd="@+id/bt_cancelar_nueva_reunion"
         android:layout_marginEnd="120dp"
         android:background="@drawable/boton_circular_blanco"
-        android:textColor="@color/colorPurpleLight_2"
+        android:textColor="@color/colorAccent"
 
         />
 
@@ -104,12 +112,12 @@
         android:id="@+id/bt_cancelar_nueva_reunion"
         android:layout_width="110dp"
         android:layout_height="wrap_content"
-        android:text="cancelar"
+        android:text="@string/boton_cancelar"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="5dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/boton_circular_blanco"
-        android:textColor="@color/colorPurpleLight_2"
+        android:textColor="@color/colorAccent"
         />
 </RelativeLayout>

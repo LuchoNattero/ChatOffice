@@ -2,6 +2,7 @@ package com.example.asus.chatoffice.FireBase;
 
 public class Reference_Fire_Base {
 
+    final static public String ID_ORGANIZACION = "st_id_organizacion";
     static public String REFERENCE_DATABASE_PROYECTO = "Proyectos";
     static public String REFERENCE_DATABASE_ORGANIZACION = "Organizaciones";
     final static public String LISTA_MIEMBROS = "lista_miembros_organizacion";

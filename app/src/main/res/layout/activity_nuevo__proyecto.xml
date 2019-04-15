@@ -14,68 +14,78 @@
         android:background="@color/colorPrimary"/>
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nombre Proyecto"
+        android:layout_height="@dimen/editText_alto"
+        android:hint="@string/nombre_del_grupo_de_trabajo"
+        android:paddingLeft="@dimen/sangria"
+        android:paddingRight="@dimen/sangria"
         android:id="@+id/et_nombre_proyecto_nuevo_proyecto"
         android:layout_below="@+id/tb_barra_nuevo_proyecto"
+        android:background="@drawable/boton_circular_blanco"
+        android:layout_marginHorizontal="@dimen/sangria"
+        android:layout_marginTop="@dimen/espacio_top"
         />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tv_lider_proyecto_nuevo_proyecto"
         android:layout_below="@+id/et_nombre_proyecto_nuevo_proyecto"
-        android:text="Asignar Lider de Proyecto"
+        android:text="@string/asignar_lider_de_proyecto"
         android:textSize="18dp"
-
+        android:layout_marginTop="@dimen/espacio_top"
+        android:layout_marginHorizontal="5dp"
         />
     <ListView
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:id="@+id/lv_administrador_nuevo_proyecto"
         android:layout_below="@+id/tv_lider_proyecto_nuevo_proyecto"
+        android:background="@drawable/boton_circular_blanco"
+        android:layout_marginHorizontal="5dp"
         />
-    <!--
-    <view
-        android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:id="@+id/vw_sombrado_1"
-        android:layout_below="@id/lv_administrador_nuevo_proyecto"
-        android:background="@drawable/sombreado"
-        />-->
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/tv_integrantes_nuevo_proyecto"
         android:layout_below="@+id/lv_administrador_nuevo_proyecto"
-        android:text="Seleccionar los integrantes"
+        android:text="@string/seleccionar_los_integrantes"
         android:textSize="18dp"
-        android:paddingLeft="5dp"
+        android:layout_marginHorizontal="5dp"
         />
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/lv_integrantes_nuevo_proyecto"
         android:layout_below="@+id/tv_integrantes_nuevo_proyecto"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="65dp"
+        android:layout_marginHorizontal="5dp"
+        android:background="@drawable/boton_circular_blanco"
         />
 
     <Button
-        android:layout_width="110dp"
+        android:layout_width="@dimen/boton_ancho_medianos"
         android:layout_height="wrap_content"
-        android:text="aceptar"
+        android:text="@string/boton_aceptar"
         android:id="@+id/bt_aceptar_nuevo_proyecto"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_marginRight="130dp"
+        android:background="@drawable/boton_circular_blanco"
+        android:textColor="@color/colorAccent"
+        android:layout_marginBottom="5dp"
         />
     <Button
-        android:layout_width="110dp"
+        android:layout_width="@dimen/boton_ancho_medianos"
         android:layout_height="wrap_content"
-        android:text="cancelar"
+        android:text="@string/boton_cancelar"
         android:id="@+id/bt_cancelar_nuevo_proyecto"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_marginRight="10dp"
+        android:background="@drawable/boton_circular_blanco"
+        android:textColor="@color/colorAccent"
+        android:layout_marginBottom="5dp"
+
         />
 
 

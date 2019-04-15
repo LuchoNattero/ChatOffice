@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:id="@+id/tb_nueva_tarea"
-        android:background="@color/colorPurpleLight"
+        android:background="@color/colorPrimary"
         android:title="Nueva tarea"
         android:titleTextColor="@color/colorBlanco"
         />
@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="10dp"
-        android:hint="Ingrese el título"
+        android:hint="@string/ing_titulo"
         android:layout_below="@+id/tb_nueva_tarea"
         android:background="@drawable/boton_circular_blanco"
         android:paddingLeft="10dp"
@@ -38,7 +38,7 @@
         android:layout_height="50dp"
         android:layout_below="@+id/et_tituo_nueva_tarea"
         android:layout_marginTop="5dp"
-        android:hint="Ingrese una breve descripción"
+        android:hint="@string/ing_breve_descrp"
         android:background="@drawable/boton_circular_blanco"
         android:paddingLeft="10dp"
         android:layout_marginHorizontal="5dp"
@@ -53,7 +53,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="50dp"
         android:layout_marginTop="5dp"
-        android:text="Prioridad:"
+        android:text="@string/prioridad"
         android:textColor="#000000"
         android:textSize="18dp" />
 
@@ -74,7 +74,7 @@
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
-        android:text="Proyecto: "
+        android:text="@string/grupo"
         android:textColor="#000000"
         android:textSize="18dp" />
 
@@ -93,7 +93,7 @@
         android:layout_below="@+id/sp_asignar_proyecto_nueva_tarea"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
-        android:text="Usuario: "
+        android:text="@string/usuario"
         android:textColor="#000000"
         android:textSize="18dp"
 
@@ -118,7 +118,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_marginRight="50dp"
-        android:hint="Nombre del item"
+        android:hint="@string/nom_item"
         android:background="@drawable/boton_circular_blanco"
         android:paddingLeft="10dp"
 
@@ -132,7 +132,7 @@
         android:layout_marginRight="5dp"
         android:layout_alignTop="@+id/et_item_nueva_tarea"
         android:src="@drawable/ic_floating_chat"
-        app:backgroundTint="@color/colorPurpleLight_2"
+        app:backgroundTint="@color/colorAccent"
         app:fabSize="mini" />
 
     <ListView

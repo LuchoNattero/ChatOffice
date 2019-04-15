@@ -10,12 +10,12 @@
         android:id="@+id/bt_enviar_plantilla_comunicado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Comunicar"
+        android:text="@string/comunicar"
         android:layout_alignParentRight="true"
         android:layout_marginRight="5dp"
         android:layout_marginTop="5dp"
         android:background="@drawable/boton_circular_blanco"
-        android:textColor="@color/colorPurpleLight_2"
+        android:textColor="@color/colorAccent"
 
         />
 
@@ -23,13 +23,13 @@
         android:id="@+id/bt_cancelar_plantilla_comunicado"
         android:layout_width="40dp"
         android:layout_height="wrap_content"
-        android:text="X"
+        android:text="@string/x"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
         android:background="@android:color/transparent"
         android:textSize="24dp"
-        android:textColor="@color/colorPurpleLight_2"
+        android:textColor="@color/colorAccent"
         />
 
     <RelativeLayout
@@ -48,7 +48,7 @@
         android:gravity="top"
         android:paddingLeft="5dp"
         android:paddingTop="5dp"
-        android:hint="¿Que quieres comunicar?"
+        android:hint="@string/que_quieres_comunicar"
         android:inputType="textMultiLine"
         android:scrollHorizontally="false"
         android:background="@null"

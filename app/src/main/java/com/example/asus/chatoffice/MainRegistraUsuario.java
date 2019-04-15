@@ -4,21 +4,22 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.Toast;
 
 import com.example.asus.chatoffice.FireBase.Reference_Fire_Base;
 import com.example.asus.chatoffice.Objetos.Organizacion;
-import com.example.asus.chatoffice.Objetos.Proyecto;
 import com.example.asus.chatoffice.Objetos.Usuario;
 import com.example.asus.chatoffice.Reference.Reference;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -27,25 +28,30 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.FirebaseUserMetadata;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class MainRegistraUsuario extends AppCompatActivity {
     EditText nombre,apellido,codigoId,et_email,et_pass,et_pass_repetir;
-//    ListView lista_prueba;
-//    ArrayAdapter<Organizacion> adaptador_SP_PRO;
+    AutoCompleteTextView at_id_organizacion;
+
+
     Switch tieneId;
     Button aceptar,cancelar;
 
-    Boolean esAdministrador= false, correcto = true;
+    Boolean esAdministrador= false;
     List<Organizacion> list_organizaciones = new ArrayList<>();
     private ProgressDialog progressDialog;
     Usuario usuario;
@@ -53,6 +59,8 @@ public class MainRegistraUsuario extends AppCompatActivity {
     FirebaseDatabase database;
     private FirebaseAuth.AuthStateListener authStateListener;
     DatabaseReference databaseReference;
+
+    ArrayAdapter<Organizacion> adapterQuery;
 
 
 
@@ -62,36 +70,33 @@ public class MainRegistraUsuario extends AppCompatActivity {
         setContentView(R.layout.activity_main_registra_usuario);
 
         database = FirebaseDatabase.getInstance();
-        databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReference = FirebaseDatabase.getInstance().getReference(Reference_Fire_Base.REFERENCE_DATABASE_ORGANIZACION);
         mAuth = FirebaseAuth.getInstance();
 
 
-        database.getReference(Reference_Fire_Base.REFERENCE_DATABASE_ORGANIZACION).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                list_organizaciones.removeAll(list_organizaciones);
+        nombre = findViewById(R.id.et_nombre_registrar_usuario);
+        apellido = findViewById(R.id.et_apellido_registrar_usuario);
+        et_email = findViewById(R.id.et_email_registrar_usuario);
+        et_pass = findViewById(R.id.et_contrasenia_registrar_usuario);
+        et_pass_repetir = findViewById(R.id.et_contrasenia_repetir_registrar_usuario);
+        at_id_organizacion = findViewById(R.id.at_text_organizacion);
+        tieneId = findViewById(R.id.sh_pregunta_registrar_usuario);
+        aceptar = findViewById(R.id.bt_aceptar_registrar_usuario);
+        cancelar = findViewById(R.id.bt_cancelar_registrar_usuario);
 
-                for (DataSnapshot data : dataSnapshot.getChildren()){
+        adapterQuery = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line,list_organizaciones);
 
-                    Organizacion org = data.getValue(Organizacion.class);
-                    list_organizaciones.add(org);
-                }
+        at_id_organizacion.setThreshold(1);
+        at_id_organizacion.setAdapter(adapterQuery);
 
-//                adaptador_SP_PRO.notifyDataSetChanged();
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
 
         authStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser usr = firebaseAuth.getCurrentUser();
 
-                if(usr != null){
+                if (usr != null) {
 
                     usuario = new Usuario(nombre.getText().toString(), apellido.getText().toString(), mAuth.getUid().toString(), codigoId.getText().toString());
                     if (esAdministrador) {
@@ -104,12 +109,12 @@ public class MainRegistraUsuario extends AppCompatActivity {
 
 
                     }
-                    /*else {
+                    else {
 
                         String s = codigoId.getText().toString();
                         actualizar_miembros(s, usuario.getSt_id());
 
-                    }*/
+                    }
                     guardar_usuario(usuario);
                     createAdvertenciaVerificacion();
 
@@ -120,40 +125,22 @@ public class MainRegistraUsuario extends AppCompatActivity {
         };
 
 
-
-        nombre = findViewById(R.id.et_nombre_registrar_usuario);
-        apellido = findViewById(R.id.et_apellido_registrar_usuario);
-        codigoId = findViewById(R.id.et_id_registrar_usuario);
-        et_email = findViewById(R.id.et_email_registrar_usuario);
-        et_pass = findViewById(R.id.et_contrasenia_registrar_usuario);
-        et_pass_repetir = findViewById(R.id.et_contrasenia_repetir_registrar_usuario);
-
-//       ----------------------------------------------
-/*        lista_prueba = findViewById(R.id.lv_registrar_usuario);
-        adaptador_SP_PRO =  new ArrayAdapter<>(this,android.R.layout.simple_spinner_dropdown_item,list_organizaciones);
-        lista_prueba.setAdapter(adaptador_SP_PRO);*/
-
-//        --------------------------------------------
-        tieneId= findViewById(R.id.sh_pregunta_registrar_usuario);
-
-        aceptar= findViewById(R.id.bt_aceptar_registrar_usuario);
-        cancelar = findViewById(R.id.bt_cancelar_registrar_usuario);
-
         progressDialog = new ProgressDialog(this);
 
         tieneId.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if (tieneId.isChecked()){
+                if (tieneId.isChecked()) {
 
                     esAdministrador = true;
+                } else {
+                    esAdministrador = false;
                 }
-                else{ esAdministrador= false;}
 
             }
         });
-//Agregar funcionamiento botón cancelar
+
         cancelar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -202,8 +189,32 @@ public class MainRegistraUsuario extends AppCompatActivity {
 
         mAuth.addAuthStateListener(authStateListener);
 
+        actualizar_organizaciones();
     }
 
+    void actualizar_organizaciones(){
+
+        databaseReference.orderByChild(Reference_Fire_Base.REFERENCE_DATABASE_ORGANIZACION).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                list_organizaciones.clear();
+                for (DataSnapshot dataChild : dataSnapshot.getChildren()){
+
+                    list_organizaciones.add(dataChild.getValue(Organizacion.class));
+
+
+                }
+                adapterQuery.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+    }
     @Override
     protected void onStop() {
         super.onStop();
@@ -211,6 +222,7 @@ public class MainRegistraUsuario extends AppCompatActivity {
         if (authStateListener != null){
             mAuth.removeAuthStateListener(authStateListener);
         }
+
 
     }
 

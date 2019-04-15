@@ -5,41 +5,244 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainConfiguracion">
+    tools:context=".MainConfiguracion"
+    >
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tb_main_configuracion"
+        android:background="@color/colorPrimary"
+
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CUENTA"
+        android:id="@+id/tv_titulo_configuracion"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/tb_main_configuracion"
+        android:layout_marginHorizontal="@dimen/sangria"
+        android:textColor="@color/colorPrimary"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/email_usuario"
+        android:id="@+id/tv_email_configuracion"
+        android:layout_below="@+id/tv_titulo_configuracion"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="@dimen/sangria"
+        android:textColor="@android:color/black"
+
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_email_main_configuracion"
+        android:text="email"
+        android:layout_alignTop="@+id/tv_email_configuracion"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/sangria"
+        android:textColor="@color/colorAccent"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vw_configuracion"
+        android:id="@+id/vw_email_configuracion"
+        android:background="@color/colorGris"
+        android:layout_below="@+id/tv_email_configuracion"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/org_perteneciente"
+        android:id="@+id/tv_organizacion_configuracion"
+        android:layout_below="@+id/vw_email_configuracion"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="@dimen/sangria"
+        android:textColor="@android:color/black"
+
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_organizacion_main_configuracion"
+        android:text="organizacion"
+        android:layout_alignTop="@+id/tv_organizacion_configuracion"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/sangria"
+        android:textColor="@color/colorAccent"
+
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vw_configuracion"
+        android:id="@+id/vw_organizacion_configuracion"
+        android:background="@color/colorGris"
+        android:layout_below="@+id/tv_organizacion_configuracion"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="10dp"
+        />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="COFIGURACION"
-        android:id="@+id/tv_titulo_configuracion"/>
+        android:text="@string/informaci_n_del_usuario"
+        android:textColor="@color/colorPrimary"
+        android:id="@+id/tv_informacion_configuracion"
+        android:layout_below="@+id/vw_organizacion_configuracion"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/et_nombre_configuracion"
-        android:layout_below="@+id/tv_titulo_configuracion"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/et_apellido_configuracion"
-        android:layout_below="@+id/et_nombre_configuracion"
         />
 
-    <EditText
-        android:id="@+id/et_organizacion_configuracion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/et_apellido_configuracion"
-        android:layout_marginRight="100dp"
-        />
-
-    <Button
-        android:id="@+id/bt_cambiar_organizacion_configuracion"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/tv_nombre_configuracion"
+        android:text="@string/nombre_usuario"
+        android:layout_below="@+id/tv_informacion_configuracion"
+        android:layout_marginHorizontal="@dimen/sangria"
+        android:layout_marginTop="15dp"
+        android:textColor="@android:color/black"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="nombre"
+        android:id="@+id/tv_nombre_main_configuracion"
+        android:layout_alignTop="@+id/tv_nombre_configuracion"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="5dp"
-        android:layout_below="@+id/et_apellido_configuracion"
-        android:text="CAMBIAR" />
+        android:layout_marginEnd="@dimen/sangria"
+        android:textColor="@color/colorAccent"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vw_configuracion"
+        android:id="@+id/vw_nombre_configuracion"
+        android:background="@color/colorGris"
+        android:layout_below="@+id/tv_nombre_configuracion"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="10dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_apellido_configuracion"
+        android:text="@string/apellido_usuario"
+        android:layout_below="@+id/vw_nombre_configuracion"
+        android:layout_marginTop="@dimen/espacio_top"
+        android:layout_marginHorizontal="@dimen/sangria"
+        android:textColor="@android:color/black"
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_apellido_main_configuracion"
+        android:text="apellido"
+        android:layout_alignTop="@+id/tv_apellido_configuracion"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/sangria"
+        android:textColor="@color/colorAccent"
+
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vw_configuracion"
+        android:id="@+id/vw_apellido_configuracion"
+        android:background="@color/colorGris"
+        android:layout_below="@+id/tv_apellido_configuracion"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="10dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="INFORMACIÓN LABORAL"
+        android:textColor="@color/colorPrimary"
+        android:id="@+id/tv_inf_laboral_configuracion"
+        android:layout_below="@+id/vw_apellido_configuracion"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cantidad de grupos de trabajo"
+        android:id="@+id/tv_grupos_configuracion"
+        android:layout_below="@+id/tv_inf_laboral_configuracion"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="@dimen/sangria"
+        android:textColor="@android:color/black"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_grupos_main_configuracion"
+        android:text="cant"
+        android:layout_alignTop="@+id/tv_grupos_configuracion"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/sangria"
+        android:textColor="@color/colorAccent"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vw_configuracion"
+        android:id="@+id/vw_grupos_configuracion"
+        android:background="@color/colorGris"
+        android:layout_below="@+id/tv_grupos_configuracion"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="10dp"
+        />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cantidad de tareas a cargo"
+        android:id="@+id/tv_tarea_configuracion"
+        android:layout_below="@+id/vw_grupos_configuracion"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="@dimen/sangria"
+        android:textColor="@android:color/black"
+
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_tarea_main_configuracion"
+        android:text="cant"
+        android:layout_alignTop="@+id/tv_tarea_configuracion"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/sangria"
+        android:textColor="@color/colorAccent"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vw_configuracion"
+        android:id="@+id/vw_tareas_configuracion"
+        android:background="@color/colorGris"
+        android:layout_below="@+id/tv_tarea_configuracion"
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="10dp"
+        />
 
 </RelativeLayout>

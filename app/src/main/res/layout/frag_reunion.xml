@@ -55,27 +55,30 @@
             android:layout_marginRight="5dp"
             />
         <Button
-            android:layout_width="110dp"
+            android:layout_width="@dimen/boton_ancho_medianos"
             android:layout_height="40dp"
-            android:text="aceptar"
+            android:text="@string/boton_aceptar"
             android:id="@+id/bt_aceptar_reunion"
             android:layout_alignParentBottom="true"
             android:layout_alignRight="@+id/bt_cancelar_reunion"
             android:layout_marginRight="120dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/boton_circular_blanco"
+            android:textColor="@color/colorAccent"
 
             />
         <Button
-            android:layout_width="110dp"
+            android:layout_width="@dimen/boton_ancho_medianos"
             android:layout_height="40dp"
-            android:text="cancelar"
+            android:text="@string/boton_cancelar"
             android:id="@+id/bt_cancelar_reunion"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="10dp"
             android:background="@drawable/boton_circular_blanco"
+            android:textColor="@color/colorAccent"
+
             />
     </RelativeLayout>
 </RelativeLayout>
