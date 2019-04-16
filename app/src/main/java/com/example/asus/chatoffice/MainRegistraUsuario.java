@@ -4,11 +4,9 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -21,30 +19,25 @@ import android.widget.Toast;
 import com.example.asus.chatoffice.FireBase.Reference_Fire_Base;
 import com.example.asus.chatoffice.Objetos.Organizacion;
 import com.example.asus.chatoffice.Objetos.Usuario;
-import com.example.asus.chatoffice.Reference.Reference;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.FirebaseUserMetadata;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class MainRegistraUsuario extends AppCompatActivity {
-    EditText nombre,apellido,codigoId,et_email,et_pass,et_pass_repetir;
+    EditText nombre,apellido,et_email,et_pass,et_pass_repetir;
     AutoCompleteTextView at_id_organizacion;
 
 
@@ -98,20 +91,20 @@ public class MainRegistraUsuario extends AppCompatActivity {
 
                 if (usr != null) {
 
-                    usuario = new Usuario(nombre.getText().toString(), apellido.getText().toString(), mAuth.getUid().toString(), codigoId.getText().toString());
+                    usuario = new Usuario(nombre.getText().toString(), apellido.getText().toString(), mAuth.getUid().toString(), at_id_organizacion.getText().toString());
                     if (esAdministrador) {
 
                         List<String> list_aux = new ArrayList<>();
                         list_aux.add(usuario.getSt_id());
 
-                        Organizacion organizacion = new Organizacion(usuario.getSt_id(), list_aux, codigoId.getText().toString());
+                        Organizacion organizacion = new Organizacion(usuario.getSt_id(), list_aux, at_id_organizacion.getText().toString());
                         crear_organizacion(organizacion);
 
 
                     }
                     else {
 
-                        String s = codigoId.getText().toString();
+                        String s = at_id_organizacion.getText().toString();
                         actualizar_miembros(s, usuario.getSt_id());
 
                     }
@@ -169,12 +162,12 @@ public class MainRegistraUsuario extends AppCompatActivity {
 //
 //                    }
 
-/*                    else if(exiteOrganizacion(codigoId.getText().toString())) {
+/*                    else if(exiteOrganizacion(at_id_organizacion.getText().toString())) {
 
                         crearUsuarioFirebase(st_email,st_pass);
 
                     }else {
-                        Toast.makeText(getApplicationContext(),"la organizacion no existe: "+ codigoId.getText().toString(),Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"la organizacion no existe: "+ at_id_organizacion.getText().toString(),Toast.LENGTH_SHORT).show();
                     }*/
                     progressDialog.dismiss();
                 }
@@ -232,7 +225,7 @@ public class MainRegistraUsuario extends AppCompatActivity {
         int i = 0;
         while (!bandera && list_organizaciones.size() > i){
 
-            if (list_organizaciones.get(i).getSt_id_organizacion().equals(codigoId.getText().toString())){
+            if (list_organizaciones.get(i).getSt_id_organizacion().equals(at_id_organizacion.getText().toString())){
                 bandera = true;
             }
 
@@ -269,7 +262,8 @@ public class MainRegistraUsuario extends AppCompatActivity {
         Map<String, Object> childUpdate = new HashMap<>();
         childUpdate.put(usuario.getSt_id(),usuario);
 
-        databaseReference.child(Reference_Fire_Base.REFERENCE_DATABASE_GUARDAR_USUARIO).updateChildren(childUpdate);
+        DatabaseReference dataRefUsuario = database.getReference();
+        dataRefUsuario.child(Reference_Fire_Base.REFERENCE_DATABASE_GUARDAR_USUARIO).updateChildren(childUpdate);
     }
 
     void crear_organizacion(Organizacion org){
@@ -278,7 +272,8 @@ public class MainRegistraUsuario extends AppCompatActivity {
         Map<String, Object> childUpdate = new HashMap<>();
         childUpdate.put(org.getSt_id_organizacion(),org);
 
-        databaseReference.child(Reference_Fire_Base.REFERENCE_DATABASE_ORGANIZACION).updateChildren(childUpdate);
+        DatabaseReference dataRefOrg = database.getReference();
+        dataRefOrg.child(Reference_Fire_Base.REFERENCE_DATABASE_ORGANIZACION).updateChildren(childUpdate);
     }
 
     private boolean campos_completos() {
@@ -295,10 +290,10 @@ public class MainRegistraUsuario extends AppCompatActivity {
             apellido.setError("Debe completar el campo");
         }
         if(esAdministrador){
-            if(codigoId.getText().toString().isEmpty()){
+            if(at_id_organizacion.getText().toString().isEmpty()){
 
             correcto = false;
-            codigoId.setError("Debe completar el campo");
+            at_id_organizacion.setError("Debe completar el campo");
             }
         }
         if(et_email.getText().toString().isEmpty()){

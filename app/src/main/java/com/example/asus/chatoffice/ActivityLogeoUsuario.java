@@ -1,5 +1,6 @@
 package com.example.asus.chatoffice;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.drawable.GradientDrawable;
 import android.support.annotation.NonNull;
@@ -31,17 +32,21 @@ public class ActivityLogeoUsuario extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener authStateListener;
-
+    private ProgressDialog progressDialog;
     EditText et_email,et_pass;
     Button bt_ingresar,bt_registrar;
 
     List<Organizacion> list_organizacion = new ArrayList<>();
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_logeo_usuario);
+
+        progressDialog = new ProgressDialog(ActivityLogeoUsuario.this);
+
 
         mAuth = FirebaseAuth.getInstance();
         authStateListener = new FirebaseAuth.AuthStateListener() {
@@ -60,6 +65,8 @@ public class ActivityLogeoUsuario extends AppCompatActivity {
 
                         Toast.makeText(getApplicationContext(),"Usted debe verificar el correo",Toast.LENGTH_SHORT).show();
                     }
+
+                    progressDialog.dismiss();
                 }
 
             }
@@ -90,6 +97,11 @@ public class ActivityLogeoUsuario extends AppCompatActivity {
 
                 String st_email = et_email.getText().toString();
                 String st_pass = et_pass.getText().toString();
+
+
+                progressDialog.setMessage("Cargando...");
+                progressDialog.show();
+
                 if(!camposCompletos()) {
                     Toast.makeText(getApplicationContext(),"Complete ambos campos",Toast.LENGTH_SHORT).show();
                 }
@@ -116,7 +128,11 @@ public class ActivityLogeoUsuario extends AppCompatActivity {
                         }
                     });
                 }
+
+
             }
+
+
         });
 
 
